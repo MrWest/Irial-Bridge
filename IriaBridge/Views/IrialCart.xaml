@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="IriaBridge.Views.IrialCart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IriaBridge"
+             xmlns:vw="clr-namespace:IriaBridge.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <vw:CartViewModel/>
+    </UserControl.DataContext>
+    <Border >
+        <Border.Style>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="Width" Value="264"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsOpen}" Value="False">
+                        <Setter Property="Width" Value="0"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+            <TextBlock Grid.ColumnSpan="3" Text="Cart"/>
+            <ListBox Grid.Row="1" ItemsSource="{Binding Items}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding Image.Uri}" Stretch="Uniform" />
+
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="{Binding Name}"/>
+                                <TextBlock Text="{Binding Version}"/>
+                            </StackPanel>
+                            <TextBlock Grid.Column="2" VerticalAlignment="Center" Text="{Binding Price}" FontSize="18"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Grid.Row="2" Content="Buy" Margin="40,20,40,0" Command="{Binding Close}"/>
+
+    </Grid>
+    </Border>
+</UserControl>
