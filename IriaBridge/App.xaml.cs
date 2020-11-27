@@ -16,6 +16,7 @@ using IriaBridge.Business;
 using Infralution.Localization.Wpf;
 using System.Globalization;
 using IriaBridge.Views;
+using System.IO;
 
 namespace IriaBridge
 {
@@ -61,9 +62,8 @@ namespace IriaBridge
             var sectionViewModel = new SectionViewModel();
             unityContainer.RegisterInstance(sectionViewModel);
 
+
            
-
-
             CultureManager.UICulture = new CultureInfo(CultureInfo.CurrentCulture.Name);
 
             //var check = ServiceLocator.Current.GetInstance(typeof(CartViewModel));
