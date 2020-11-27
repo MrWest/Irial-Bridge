@@ -39,6 +39,11 @@ namespace IriaBridge
             unityContainer.RegisterType<Repository<Image>, ModelImageRepository>();
             unityContainer.RegisterType<ImageRepository, ModelImageRepository>();
             unityContainer.RegisterType<ApplicationBase<Image, ImageRepository>, ImagesApplication>();
+            // comments
+            unityContainer.RegisterType<PresenterBase<Comment>, CommentPresenter>();
+            unityContainer.RegisterType<Repository<Comment>, ModelCommentRepository>();
+            unityContainer.RegisterType<CommentRepository, ModelCommentRepository>();
+            unityContainer.RegisterType<ApplicationBase<Comment, CommentRepository>, CommentApplication>();
 
             //category
             unityContainer.RegisterType<CategoryPresenter, CategoryPresenter>();
