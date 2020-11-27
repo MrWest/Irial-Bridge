@@ -9,7 +9,7 @@
         mc:Ignorable="d" 
         ContentSource="/Views/Introduction.xaml"
         ContentLoader="{StaticResource ContentLoader}"
-        Title="IrialBridge" Height="600" Width="800">
+        Title="IrialBridge" Height="700" Width="1100">
     <mui:ModernWindow.SideContent>
         <views:IrialCart/>
     </mui:ModernWindow.SideContent>
