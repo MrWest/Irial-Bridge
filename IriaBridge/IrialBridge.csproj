@@ -145,6 +145,9 @@
       <DependentUpon>SettingsAppearance.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\SettingsAppearanceViewModel.cs" />
+    <Compile Include="Views\Utils\Comments.xaml.cs">
+      <DependentUpon>Comments.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Utils\ContentLoader.cs" />
     <Compile Include="Views\Utils\IrialCarousel.xaml.cs">
       <DependentUpon>IrialCarousel.xaml</DependentUpon>
@@ -196,6 +199,10 @@
     <Page Include="Views\SettingsAppearance.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Utils\Comments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Utils\IrialCarousel.xaml">
       <SubType>Designer</SubType>

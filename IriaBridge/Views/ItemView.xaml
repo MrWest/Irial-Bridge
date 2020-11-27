@@ -19,7 +19,10 @@
             <RowDefinition Height="1.4*" MaxHeight="600"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <utils:IrialCarousel Grid.Column="1" Images="{Binding  Images.Items}" />
+        <StackPanel  Grid.Column="1" >
+            <utils:IrialCarousel Images="{Binding  Images.Items}" />
+            <utils:Comments CommentsSource="{Binding  Comments.Items}" />
+        </StackPanel>
         <StackPanel Grid.Column="2">
             <TextBlock Text="{Binding Name}" />
             <TextBlock Text="{Binding Description}" />
