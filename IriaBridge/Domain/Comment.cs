@@ -20,7 +20,7 @@ namespace IriaBridge.Domain
         public String user_picture { get; set; }
 
         public String Message { get { return comment; } }
-        public String Date { get { return comment; } }
+        public String Date { get { return date_created; } }
         public String UserName { get { return $"{user_first_name} {user_last_name}"; } }
         public String UserPicture { get { return comment; } }
     }
