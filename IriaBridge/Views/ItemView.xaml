@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IriaBridge"
              xmlns:utils="clr-namespace:IriaBridge.Views.Utils"
+             xmlns:properties="clr-namespace:IriaBridge.Properties"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=local:MainWindow}, Path=ShowingItem}">
@@ -25,7 +26,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Comments" FontWeight="Bold" Margin="0,24,0,16" />
+            <TextBlock Text="{x:Static properties:Resources.Comments}" FontWeight="Bold" Margin="0,24,0,16" />
             <utils:Comments Grid.Row="1" CommentsSource="{Binding Comments.Items}" />
         </Grid>
         <StackPanel Grid.Column="2">

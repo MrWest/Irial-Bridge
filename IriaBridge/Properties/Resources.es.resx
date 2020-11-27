@@ -120,6 +120,9 @@
   <data name="Apparence" xml:space="preserve">
     <value>Apariencia</value>
   </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
   <data name="Help" xml:space="preserve">
     <value>Ayuda</value>
   </data>

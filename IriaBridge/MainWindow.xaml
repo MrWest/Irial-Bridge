@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:IriaBridge.Views"
-        xmlns:loaders="clr-namespace:IriaBridge.Views.Utils"
+        xmlns:properties="clr-namespace:IriaBridge.Properties"
         mc:Ignorable="d" 
         ContentSource="/Views/Introduction.xaml"
         ContentLoader="{StaticResource ContentLoader}"
@@ -14,18 +14,18 @@
         <views:IrialCart/>
     </mui:ModernWindow.SideContent>
     <mui:ModernWindow.TitleLinks>
-        <mui:Link DisplayName="Configuracion" Source="/Views/Settings.xaml" />
-        <mui:Link DisplayName="Ayuda" Source="http://mui.codeplex.com" />
+        <mui:Link DisplayName="{x:Static properties:Resources.Settings}" Source="/Views/Settings.xaml" />
+        <mui:Link DisplayName="{x:Static properties:Resources.Help}" Source="http://mui.codeplex.com" />
     </mui:ModernWindow.TitleLinks>
 
     <mui:ModernWindow.MenuLinkGroups>
 
-        <mui:LinkGroup DisplayName="Models">
+        <mui:LinkGroup DisplayName="{x:Static properties:Resources.Models}">
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="Models" Source="/Views/Models.xaml" />
+                <mui:Link DisplayName="{x:Static properties:Resources.Models}" Source="/Views/Models.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
-        <mui:LinkGroup DisplayName="Projects" >
+        <mui:LinkGroup DisplayName="{x:Static properties:Resources.Projects}" >
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Navegacion" Source="/Pages/LayoutWireframe.xaml"  />
                 <!--<mui:Link DisplayName="Polos" Source="/Pages/LayoutBasic.xaml" />
@@ -37,7 +37,7 @@
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
 
-        <mui:LinkGroup DisplayName="Textures">
+        <mui:LinkGroup DisplayName="{x:Static properties:Resources.Textures}">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Regulares"  Source="/Content/LoremIpsumList.xaml" />
                 <mui:Link DisplayName="Especializados"  Source="/Content/LoremIpsumList.xaml"  />
@@ -45,7 +45,7 @@
                 <mui:Link DisplayName="Modern controls" Source="/Pages/ControlsModern.xaml" />-->
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
-        <mui:LinkGroup DisplayName="Scenes" >
+        <mui:LinkGroup DisplayName="{x:Static properties:Resources.Scenes}" >
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Variables del Sistema" Source="/Pages/Navigation.xaml" />
                 <mui:Link DisplayName="Reglas del Negocio" Source="/Pages/ContentLoader.xaml" />
@@ -53,7 +53,7 @@
                 <mui:Link DisplayName="Content Loader" Source="/Pages/ContentLoader.xaml" />-->
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
-        <mui:LinkGroup DisplayName="Configuracion" GroupKey="settings" >
+        <mui:LinkGroup DisplayName="{x:Static properties:Resources.Settings}" GroupKey="settings" >
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Software" Source="/Pages/Settings.xaml" />
             </mui:LinkGroup.Links>

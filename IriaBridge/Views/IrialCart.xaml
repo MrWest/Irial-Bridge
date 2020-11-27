@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IriaBridge"
              xmlns:vw="clr-namespace:IriaBridge.ViewModel"
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.DataContext>
@@ -28,7 +29,20 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-            <TextBlock Grid.ColumnSpan="3" Text="Cart"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.ColumnSpan="3" Text="Cart"/>
+                <Button Grid.Column="1" BorderThickness="0" Foreground="Black" ToolTip="Close Cart" Command="{Binding Close}" >
+                    <Button.Content>
+                        <Path Data="M0,0 L8,7 M8,0 L0,7 Z" Width="8" Height="7" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                              Stroke="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}" StrokeThickness="1.5"  />
+
+                    </Button.Content>
+                </Button>
+            </Grid>
             <ListBox Grid.Row="1" ItemsSource="{Binding Items}" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -39,9 +53,14 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
-                            <Image Source="{Binding Image.Uri}" Stretch="Uniform" />
+                                <Border BorderBrush="Gray" BorderThickness="1" Cursor="Hand" Height="92" Width="92" Margin="0,0,16,0" 
+                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="{Binding Image.Url}" Stretch="UniformToFill"/>
+                                    </Border.Background>
+                                </Border>
 
-                            <StackPanel Grid.Column="1">
+                                <StackPanel Grid.Column="1">
                                 <TextBlock Text="{Binding Name}"/>
                                 <TextBlock Text="{Binding Version}"/>
                             </StackPanel>

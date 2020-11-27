@@ -86,7 +86,8 @@ namespace IriaBridge.Views
         private void SyncThemeAndColor()
         {
             // synchronizes the selected viewmodel theme with the actual theme used by the appearance manager.
-            this.SelectedTheme = this.themes.FirstOrDefault(l => l.Source.Equals(AppearanceManager.Current.ThemeSource));
+             this.SelectedTheme = this.themes.FirstOrDefault(l => l.Source.Equals(AppearanceManager.Current.ThemeSource));
+           // this.SelectedTheme = this.themes.FirstOrDefault(l => l.DisplayName.Equals("light"));
 
             // and make sure accent color is up-to-date
             this.SelectedAccentColor = AppearanceManager.Current.AccentColor;
@@ -138,7 +139,7 @@ namespace IriaBridge.Views
             get { return this.selectedTheme; }
             set
             {
-                if (this.selectedTheme != value) {
+                if (!value.Source.OriginalString.Equals(AppearanceManager.Current.ThemeSource.OriginalString) && this.selectedTheme != value) {
                     this.selectedTheme = value;
                     OnPropertyChanged("SelectedTheme");
 

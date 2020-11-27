@@ -22,7 +22,7 @@ namespace IriaBridge.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace IriaBridge.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IriaBridge.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace IriaBridge.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,16 +63,25 @@ namespace IriaBridge.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Apparence.
         /// </summary>
-        internal static string Apparence {
+        public static string Apparence {
             get {
                 return ResourceManager.GetString("Apparence", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Comments.
+        /// </summary>
+        public static string Comments {
+            get {
+                return ResourceManager.GetString("Comments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help.
         /// </summary>
-        internal static string Help {
+        public static string Help {
             get {
                 return ResourceManager.GetString("Help", resourceCulture);
             }
@@ -81,7 +90,7 @@ namespace IriaBridge.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
-        internal static string Language {
+        public static string Language {
             get {
                 return ResourceManager.GetString("Language", resourceCulture);
             }
@@ -90,7 +99,7 @@ namespace IriaBridge.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Models.
         /// </summary>
-        internal static string Models {
+        public static string Models {
             get {
                 return ResourceManager.GetString("Models", resourceCulture);
             }
@@ -99,7 +108,7 @@ namespace IriaBridge.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Projects.
         /// </summary>
-        internal static string Projects {
+        public static string Projects {
             get {
                 return ResourceManager.GetString("Projects", resourceCulture);
             }
@@ -108,7 +117,7 @@ namespace IriaBridge.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Scenes.
         /// </summary>
-        internal static string Scenes {
+        public static string Scenes {
             get {
                 return ResourceManager.GetString("Scenes", resourceCulture);
             }
@@ -117,7 +126,7 @@ namespace IriaBridge.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
-        internal static string Settings {
+        public static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
             }
@@ -126,7 +135,7 @@ namespace IriaBridge.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Textures.
         /// </summary>
-        internal static string Textures {
+        public static string Textures {
             get {
                 return ResourceManager.GetString("Textures", resourceCulture);
             }
