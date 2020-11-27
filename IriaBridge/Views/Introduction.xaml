@@ -19,7 +19,7 @@
                 <TextBlock Text="Irial 3D" Margin="0,16,0,32" FontSize="64" Foreground="#1c5375" FontWeight="Bold" FontFamily="Devos"/>
                 <StackPanel Grid.Row="1">
                     <TextBlock Text="Lumion Networkig" Margin="0,0,0,8" FontSize="32" Foreground="#e3a304" FontFamily="Gloss"/>
-                    <TextBlock Text="3D Models, Learning and Jobs" Margin="0,0,0,124" FontSize="24" Foreground="#e3a304" FontFamily="Gloss"/>
+                    <TextBlock Text="3D Models, Learning and Jobs" Margin="0,0,0,72" FontSize="24" Foreground="#e3a304" FontFamily="Gloss"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Left"  MaxWidth="600" Grid.Row="3" Margin="0,0,0,124">
                     <mui:BBCodeBlock Foreground="AntiqueWhite"  BBCode="[b]IRIAL 3D[/b] is a virtual work network that encourages the creation and commercialization of digital content, technological learning, the development of employment sources, the dissemination of scientific results or projects, and feedback in a professional community for [b]Lumion[/b] users." Margin="0,0,0,32" />

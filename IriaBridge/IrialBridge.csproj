@@ -83,14 +83,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Business\CategoryApplication.cs" />
+    <Compile Include="Business\CommentApplication.cs" />
     <Compile Include="Business\ModelApplication.cs" />
     <Compile Include="Business\ImagesApplication.cs" />
     <Compile Include="Business\SectionApplication.cs" />
     <Compile Include="DataAccess\CategoryRepository.cs" />
+    <Compile Include="DataAccess\CommentRepository.cs" />
     <Compile Include="DataAccess\ImageRepository.cs" />
+    <Compile Include="DataAccess\ModelCommentRepository.cs" />
     <Compile Include="DataAccess\ModelImageRepository.cs" />
     <Compile Include="DataAccess\SectionRepository.cs" />
     <Compile Include="Domain\Category.cs" />
+    <Compile Include="Domain\Comment.cs" />
     <Compile Include="Domain\Section.cs" />
     <Compile Include="Presenter\CategoryPresenter.cs" />
     <Compile Include="Presenter\IEntityPresenter.cs" />
