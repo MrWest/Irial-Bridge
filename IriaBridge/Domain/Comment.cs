@@ -10,18 +10,18 @@ namespace IriaBridge.Domain
     public class Comment: Entity
     {
         int Owner { get; set; }
-        String comment { get; set; }
+        public String comment { get; set; }
 
-        String date_created { get; set; }
-        String id_user { get; set; }
-        String user_first_name { get; set; }
-        String user_last_name { get; set; }
+        public String date_created { get; set; }
+        public String id_user { get; set; }
+        public String user_first_name { get; set; }
+        public String user_last_name { get; set; }
 
-        String user_picture { get; set; }
+        public String user_picture { get; set; }
 
-        String Message { get { return comment; } }
-        String Date { get { return comment; } }
-        String UserName { get { return $"{user_first_name} {user_last_name}"; } }
-        String UserPicture { get { return comment; } }
+        public String Message { get { return comment; } }
+        public String Date { get { return comment; } }
+        public String UserName { get { return $"{user_first_name} {user_last_name}"; } }
+        public String UserPicture { get { return comment; } }
     }
 }

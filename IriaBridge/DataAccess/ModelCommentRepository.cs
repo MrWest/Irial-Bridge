@@ -9,8 +9,8 @@ namespace IriaBridge.DataAccess
 {
     public class ModelCommentRepository: ImageRepository
     {
-        protected override String Path { get { return "projects/get_project_comments.php"; } }
-        protected override string Parameters { get => base.Parameters+ "&idProject=" + Project;  }
-        public int Project => Owner;
+        protected override String Path { get { return "models/get_model_comments.php"; } }
+        protected override string Parameters { get => base.Parameters+"&idModel=" + Model;  }
+        public int Model => Owner;
     }
 }

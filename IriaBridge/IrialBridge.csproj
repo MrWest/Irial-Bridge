@@ -98,6 +98,7 @@
     <Compile Include="Domain\Section.cs" />
     <Compile Include="Presenter\CategoryPresenter.cs" />
     <Compile Include="Presenter\IEntityPresenter.cs" />
+    <Compile Include="Presenter\CommentPresenter.cs" />
     <Compile Include="Presenter\INameablePresenter.cs" />
     <Compile Include="Presenter\IItemPresenter.cs" />
     <Compile Include="Presenter\ImagePresenter.cs" />
@@ -108,9 +109,11 @@
     <Compile Include="Presenter\SectionPresenter.cs" />
     <Compile Include="ViewModel\CartViewModel.cs" />
     <Compile Include="ViewModel\CategoryViewModel.cs" />
+    <Compile Include="ViewModel\CommentViewModel.cs" />
     <Compile Include="ViewModel\ItemViewModel.cs" />
     <Compile Include="ViewModel\ImageViewModel.cs" />
     <Compile Include="ViewModel\IViewModelBase.cs" />
+    <Compile Include="ViewModel\ModelCommentsViewModel.cs" />
     <Compile Include="ViewModel\ModelImagesViewModel.cs" />
     <Compile Include="ViewModel\ModelViewModel.cs" />
     <Compile Include="ViewModel\NameableViewModel.cs" />

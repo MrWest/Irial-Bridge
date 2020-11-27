@@ -17,7 +17,9 @@ namespace IriaBridge.Presenter
         public String Version { get { return Object.Version; } }
 
         ModelImagesViewModel _modelImagesViewModel = ServiceLocator.Current.GetInstance<ModelImagesViewModel>();
-        
+
+        ModelCommentsViewModel _modelCommentsViewModel = ServiceLocator.Current.GetInstance<ModelCommentsViewModel>();
+
 
         private ICommand _addToCartCommand = new RelayCommand<IItemPresenter>(ExecuteAddItem, CanExecuteAddItem);
 
@@ -48,10 +50,24 @@ namespace IriaBridge.Presenter
                     _modelImagesViewModel.Load();
                 }
                     
-;                return _modelImagesViewModel;
+                return _modelImagesViewModel;
             } }
 
         public ImagePresenter  Image => Images.Items.First();
+
+        public ModelCommentsViewModel Comments
+        {
+            get
+            {
+                if (!_modelCommentsViewModel.IsLoaded)
+                {
+                    _modelCommentsViewModel.Model = Object.Id;
+                    _modelCommentsViewModel.Load();
+                }
+
+             return _modelCommentsViewModel;
+            }
+        }
 
         public ICommand AddToCart => _addToCartCommand;
 
