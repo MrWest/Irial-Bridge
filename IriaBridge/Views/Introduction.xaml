@@ -9,12 +9,23 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid >
         <ScrollViewer>
-            <StackPanel IsEnabled="{Binding IsActivated, RelativeSource={RelativeSource AncestorType=gaatStuff:MainWindow}}" >
-                <TextBlock Text="Seguimiento Mejoras 2016" Margin="0,0,0,8"/>
-                <mui:BBCodeBlock BBCode="[b]Seguimiento Mejoras 2016:[/b] en orden de dar segumiento a las mejoras del presente año dirigase a [url=/Pages/LayoutWireframe.xaml]area de trabajo[/url].&#13;&#10;&#13;&#10;Para obtener reportes resultado de la gestion de informacion consulte  [url=/Pages/ControlsStyles.xaml]sistema de reportes[/url].&#13;&#10;&#13;&#10;Dirigase a [url=/Pages/DpiAwareness.xaml]personalizacion de datos[/url] si desea personalizar o actualizar la informacion base de la aplicacion ." Margin="0,0,0,32" />
-                <TextBlock Text="CONFIGURACION"  />
-                <mui:BBCodeBlock BBCode="La apariencia del sistema, lenguaje, acceso a datos y otros puede ser cambiada facilmente. Asegurese de visitar [url=/Pages/Settings.xaml]configuracion[/url] para adaptar a sus preferencia la configuracion del sistema." Margin="0,0,0,32"/>
-            </StackPanel>
+            <Grid  Margin="16,12,16,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Text="Irial 3D" Margin="0,16,0,32" FontSize="64" Foreground="#1c5375" FontWeight="Bold" FontFamily="Devos"/>
+                <StackPanel Grid.Row="1">
+                    <TextBlock Text="Lumion Networkig" Margin="0,0,0,8" FontSize="32" Foreground="#e3a304" FontFamily="Gloss"/>
+                    <TextBlock Text="3D Models, Learning and Jobs" Margin="0,0,0,124" FontSize="24" Foreground="#e3a304" FontFamily="Gloss"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left"  MaxWidth="600" Grid.Row="3" Margin="0,0,0,124">
+                    <mui:BBCodeBlock Foreground="AntiqueWhite"  BBCode="[b]IRIAL 3D[/b] is a virtual work network that encourages the creation and commercialization of digital content, technological learning, the development of employment sources, the dissemination of scientific results or projects, and feedback in a professional community for [b]Lumion[/b] users." Margin="0,0,0,32" />
+                    <mui:BBCodeBlock Foreground="AntiqueWhite"  BBCode="In addition, it promotes a space where entrepreneurs and leaders in the architectural and real estate design sector can find highly qualified professionals capable of carrying out the most elegant and innovative ideas." Margin="0,0,0,32"/>
+                </StackPanel>
+            </Grid>
         </ScrollViewer>
     </Grid>
 </UserControl>
