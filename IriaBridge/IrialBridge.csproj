@@ -37,9 +37,6 @@
     <Reference Include="CommonServiceLocator, Version=2.0.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.5\lib\net46\CommonServiceLocator.dll</HintPath>
     </Reference>
-    <Reference Include="Infralution.Localization.Wpf">
-      <HintPath>..\references\Infralution.Localization.Wpf.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -255,6 +252,10 @@
     <ProjectReference Include="..\FirstFloor.ModernUI.WPF4\FirstFloor.ModernUI.WPF4.csproj">
       <Project>{a0ea4572-2726-4585-8e17-3a81a0eafa61}</Project>
       <Name>FirstFloor.ModernUI.WPF4</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WPFLocalization\WPFLocalization.csproj">
+      <Project>{447b98dc-3053-488b-8bb0-21bdc4f27456}</Project>
+      <Name>WPFLocalization</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

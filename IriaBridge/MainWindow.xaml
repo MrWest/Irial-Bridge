@@ -14,18 +14,18 @@
         <views:IrialCart/>
     </mui:ModernWindow.SideContent>
     <mui:ModernWindow.TitleLinks>
-        <mui:Link DisplayName="{x:Static properties:Resources.Settings}" Source="/Views/Settings.xaml" />
-        <mui:Link DisplayName="{x:Static properties:Resources.Help}" Source="http://mui.codeplex.com" />
+        <mui:Link DisplayName="{Loc Settings}" Source="/Views/Settings.xaml" />
+        <mui:Link DisplayName="{Loc Help}" Source="http://mui.codeplex.com" />
     </mui:ModernWindow.TitleLinks>
 
     <mui:ModernWindow.MenuLinkGroups>
 
-        <mui:LinkGroup DisplayName="{x:Static properties:Resources.Models}">
+        <mui:LinkGroup DisplayName="{Loc Models}">
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="{x:Static properties:Resources.Models}" Source="/Views/Models.xaml" />
+                <mui:Link DisplayName="{Loc Models}" Source="/Views/Models.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
-        <mui:LinkGroup DisplayName="{x:Static properties:Resources.Projects}" >
+        <mui:LinkGroup DisplayName="{Loc Projects}" >
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Navegacion" Source="/Pages/LayoutWireframe.xaml"  />
                 <!--<mui:Link DisplayName="Polos" Source="/Pages/LayoutBasic.xaml" />
@@ -37,7 +37,7 @@
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
 
-        <mui:LinkGroup DisplayName="{x:Static properties:Resources.Textures}">
+        <mui:LinkGroup DisplayName="{Loc Textures}">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Regulares"  Source="/Content/LoremIpsumList.xaml" />
                 <mui:Link DisplayName="Especializados"  Source="/Content/LoremIpsumList.xaml"  />
@@ -45,7 +45,7 @@
                 <mui:Link DisplayName="Modern controls" Source="/Pages/ControlsModern.xaml" />-->
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
-        <mui:LinkGroup DisplayName="{x:Static properties:Resources.Scenes}" >
+        <mui:LinkGroup DisplayName="{Loc Scenes}" >
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Variables del Sistema" Source="/Pages/Navigation.xaml" />
                 <mui:Link DisplayName="Reglas del Negocio" Source="/Pages/ContentLoader.xaml" />
@@ -53,7 +53,7 @@
                 <mui:Link DisplayName="Content Loader" Source="/Pages/ContentLoader.xaml" />-->
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
-        <mui:LinkGroup DisplayName="{x:Static properties:Resources.Settings}" GroupKey="settings" >
+        <mui:LinkGroup DisplayName="{Loc Settings}" GroupKey="settings" >
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Software" Source="/Pages/Settings.xaml" />
             </mui:LinkGroup.Links>

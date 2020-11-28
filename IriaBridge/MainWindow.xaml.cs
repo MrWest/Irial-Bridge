@@ -1,6 +1,5 @@
 ﻿using CommonServiceLocator;
 using FirstFloor.ModernUI.Windows.Controls;
-using Infralution.Localization.Wpf;
 using IriaBridge.Presenter;
 using IriaBridge.ViewModel;
 using IriaBridge.Views;

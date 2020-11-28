@@ -13,10 +13,10 @@ using IriaBridge.Domain;
 using IriaBridge.Presenter;
 using IriaBridge.ViewModel;
 using IriaBridge.Business;
-using Infralution.Localization.Wpf;
 using System.Globalization;
 using IriaBridge.Views;
 using System.IO;
+using WPFLocalization;
 
 namespace IriaBridge
 {
@@ -68,8 +68,8 @@ namespace IriaBridge
             unityContainer.RegisterInstance(sectionViewModel);
 
 
-           
-            CultureManager.UICulture = new CultureInfo(CultureInfo.CurrentCulture.Name);
+
+            LocalizationManager.UICulture = new CultureInfo(CultureInfo.CurrentCulture.Name);
 
             //var check = ServiceLocator.Current.GetInstance(typeof(CartViewModel));
 

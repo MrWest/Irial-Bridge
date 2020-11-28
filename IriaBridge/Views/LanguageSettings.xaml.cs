@@ -1,5 +1,4 @@
-﻿using Infralution.Localization.Wpf;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -14,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFLocalization;
 
 namespace IriaBridge.Views
 {
@@ -25,13 +25,13 @@ namespace IriaBridge.Views
         public LanguageSettings()
         {
             InitializeComponent();
-            LangCombo.SelectedItem = LangCombo.Items.Cast<ComboBoxItem>().FirstOrDefault(itm => CultureManager.UICulture.ToString().Contains(itm.Content.ToString().ToLower()));
+            LangCombo.SelectedItem = LangCombo.Items.Cast<ComboBoxItem>().FirstOrDefault(itm => LocalizationManager.UICulture.ToString().Contains(itm.Content.ToString().ToLower()));
 
         }
 
         private void LangCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CultureManager.UICulture = new CultureInfo(((ComboBoxItem)e.AddedItems[0]).Content.ToString());
+            LocalizationManager.UICulture = new CultureInfo(((ComboBoxItem)e.AddedItems[0]).Content.ToString());
         }
     }
 }
