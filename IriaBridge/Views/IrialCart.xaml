@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IriaBridge"
+             xmlns:converter="clr-namespace:IriaBridge.Views.Converter"
              xmlns:vw="clr-namespace:IriaBridge.ViewModel"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
@@ -11,6 +12,9 @@
     <UserControl.DataContext>
         <vw:CartViewModel/>
     </UserControl.DataContext>
+    <UserControl.Resources>
+        <converter:SmallImageConverter  x:Key="SmallImageConverter" />
+    </UserControl.Resources>
     <Border >
         <Border.Style>
             <Style TargetType="{x:Type Border}">
@@ -56,7 +60,7 @@
                                 <Border BorderBrush="Gray" BorderThickness="1" Cursor="Hand" Height="92" Width="92" Margin="0,0,16,0" 
                                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                     <Border.Background>
-                                        <ImageBrush ImageSource="{Binding Image.Url}" Stretch="UniformToFill"/>
+                                        <ImageBrush ImageSource="{Binding Image.Url, Converter={StaticResource SmallImageConverter}}" Stretch="UniformToFill"/>
                                     </Border.Background>
                                 </Border>
 

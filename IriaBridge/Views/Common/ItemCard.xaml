@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:IriaBridge.Views.Common"
+             xmlns:converter="clr-namespace:IriaBridge.Views.Converter"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
+        <converter:MediumImageConverter  x:Key="MediumConverter" />
         <Style x:Key="ModernButtonStyle" TargetType="{x:Type mui:ModernButton}">
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
             <Setter Property="BorderThickness" Value="2"/>
@@ -24,7 +25,7 @@
     </UserControl.Resources>
     <Border  x:Name="itemCard"  Cursor="Hand" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Border.Background>
-            <ImageBrush ImageSource="{Binding Image.Url}" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="{Binding Image.Url, Converter={StaticResource MediumConverter}}" Stretch="UniformToFill"/>
         </Border.Background>
         <Grid>
             <Grid.RowDefinitions>

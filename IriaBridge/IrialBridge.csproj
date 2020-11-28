@@ -125,6 +125,8 @@
     <Compile Include="Views\Common\ItemCard.xaml.cs">
       <DependentUpon>ItemCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Converter\SmallImageConverter.cs" />
+    <Compile Include="Views\Converter\MediumImageConverter.cs" />
     <Compile Include="Views\Introduction.xaml.cs">
       <DependentUpon>Introduction.xaml</DependentUpon>
     </Compile>
