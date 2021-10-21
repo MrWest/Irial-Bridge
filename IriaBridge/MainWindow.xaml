@@ -27,30 +27,18 @@
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="{Loc Projects}" >
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="Navegacion" Source="/Pages/LayoutWireframe.xaml"  />
-                <!--<mui:Link DisplayName="Polos" Source="/Pages/LayoutBasic.xaml" />
-                <mui:Link DisplayName="Hoteles" Source="/Pages/LayoutSplit.xaml" />
-                -->
-                <!--<mui:Link DisplayName="Areas" Source="/Pages/LayoutList.xaml"  />-->
-                <!--
-                <mui:Link DisplayName="Mejoras" Source="/Pages/LayoutTab.xaml" />-->
+                <mui:Link DisplayName="{Loc Projects}"  Source="/Views/Projects.xaml"  />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
 
         <mui:LinkGroup DisplayName="{Loc Textures}">
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="Regulares"  Source="/Content/LoremIpsumList.xaml" />
-                <mui:Link DisplayName="Especializados"  Source="/Content/LoremIpsumList.xaml"  />
-                <!--<mui:Link DisplayName="Styles" Source="/Pages/ControlsStyles.xaml" />
-                <mui:Link DisplayName="Modern controls" Source="/Pages/ControlsModern.xaml" />-->
+                <mui:Link DisplayName="{Loc Textures}"  Source="/Views/Textures.xaml"  />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="{Loc Scenes}" >
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="Variables del Sistema" Source="/Pages/Navigation.xaml" />
-                <mui:Link DisplayName="Reglas del Negocio" Source="/Pages/ContentLoader.xaml" />
-                <!--<mui:Link DisplayName="Navigation" Source="/Pages/Navigation.xaml" />
-                <mui:Link DisplayName="Content Loader" Source="/Pages/ContentLoader.xaml" />-->
+                <mui:Link DisplayName="{Loc Scenes}"  Source="/Views/Scenes.xaml"  />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="{Loc Settings}" GroupKey="settings" >

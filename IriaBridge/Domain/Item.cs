@@ -15,8 +15,10 @@ namespace IriaBridge.Domain
 
         public String category_name { get; set; }
 
-        public ICollection<Image> Images { get; set; } 
+        public ICollection<Image> Images { get; set; }
 
-        
+        public ICollection<Comment> Comments { get; set; }
+
+
     }
 }

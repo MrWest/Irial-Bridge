@@ -42,30 +42,20 @@ namespace IriaBridge.Presenter
             cartViewModel.AddItem(obj);
         }
 
-        public ModelImagesViewModel Images {
+        public ICollection<ImagePresenter> Images {
             get {
-                if (!_modelImagesViewModel.IsLoaded)
-                {
-                    _modelImagesViewModel.Model = Object.Id;
-                    _modelImagesViewModel.Load();
-                }
-                    
-                return _modelImagesViewModel;
+               
+                return Object.Images.Select(i => new ImagePresenter() { Object= i}).ToArray();
             } }
 
-        public ImagePresenter  Image => Images.Items.First();
+        public ImagePresenter  Image => Images.First();
 
-        public ModelCommentsViewModel Comments
+        public ICollection<CommentPresenter> Comments
         {
             get
             {
-                if (!_modelCommentsViewModel.IsLoaded)
-                {
-                    _modelCommentsViewModel.Model = Object.Id;
-                    _modelCommentsViewModel.Load();
-                }
 
-             return _modelCommentsViewModel;
+                return Object.Comments.Select(i => new CommentPresenter() { Object = i }).ToArray();
             }
         }
 

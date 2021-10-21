@@ -28,12 +28,23 @@ namespace IriaBridge
         App()
         {
             //Init UnityContainer
-            //model
             UnityContainer unityContainer = new UnityContainer();
+            //model
             unityContainer.RegisterType<Repository<Model>, ModelRepository>();
             unityContainer.RegisterType<PresenterBase<Model>, ModelPresenter>();
             unityContainer.RegisterType<ApplicationBase<Model, ModelRepository>, ModelApplication>();
-            unityContainer.RegisterType<Repository<Model>, ModelRepository>();
+            //project
+            unityContainer.RegisterType<Repository<Project>, ProjectRepository>();
+            unityContainer.RegisterType<PresenterBase<Project>, ProjectPresenter>();
+            unityContainer.RegisterType<ApplicationBase<Project, ProjectRepository>, ProjectApplication>();
+            //textures
+            unityContainer.RegisterType<Repository<Texture>, TextureRepository>();
+            unityContainer.RegisterType<PresenterBase<Texture>, TexturePresenter>();
+            unityContainer.RegisterType<ApplicationBase<Texture, TextureRepository>, TextureApplication>();
+            //scenes
+            unityContainer.RegisterType<Repository<Scene>, SceneRepository>();
+            unityContainer.RegisterType<PresenterBase<Scene>, ScenePresenter>();
+            unityContainer.RegisterType<ApplicationBase<Scene, SceneRepository>, SceneApplication>();
             // images
             unityContainer.RegisterType<PresenterBase<Image>, ImagePresenter>();
             unityContainer.RegisterType<Repository<Image>, ModelImageRepository>();

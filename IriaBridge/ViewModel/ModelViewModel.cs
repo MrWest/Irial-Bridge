@@ -11,11 +11,11 @@ namespace IriaBridge.ViewModel
 {
     public class ModelViewModel: ItemViewModel<Model>
     {
-        protected override PresenterBase<Model> CreatePresenterFor(Model item)
-        {
-            var model = base.CreatePresenterFor(item);
-            var images = ((ModelPresenter)model).Images.Items;
-            return model;
-        }
+        //protected override PresenterBase<Model> CreatePresenterFor(Model item)
+        //{
+        //    var model = base.CreatePresenterFor(item);
+        //    var images = ((ModelPresenter)model).Images;
+        //    return model;
+        //}
     }
 }

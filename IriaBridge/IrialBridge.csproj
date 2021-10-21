@@ -81,6 +81,9 @@
     </ApplicationDefinition>
     <Compile Include="Business\CategoryApplication.cs" />
     <Compile Include="Business\CommentApplication.cs" />
+    <Compile Include="Business\TextureApplication.cs" />
+    <Compile Include="Business\SceneApplication.cs" />
+    <Compile Include="Business\ProjectApplication.cs" />
     <Compile Include="Business\ModelApplication.cs" />
     <Compile Include="Business\ImagesApplication.cs" />
     <Compile Include="Business\SectionApplication.cs" />
@@ -88,10 +91,17 @@
     <Compile Include="DataAccess\CommentRepository.cs" />
     <Compile Include="DataAccess\ImageRepository.cs" />
     <Compile Include="DataAccess\ModelCommentRepository.cs" />
+    <Compile Include="DataAccess\ProjectImageRepository.cs" />
     <Compile Include="DataAccess\ModelImageRepository.cs" />
+    <Compile Include="DataAccess\TextureRepository.cs" />
+    <Compile Include="DataAccess\SceneRepository.cs" />
+    <Compile Include="DataAccess\ProjectRepository.cs" />
     <Compile Include="DataAccess\SectionRepository.cs" />
     <Compile Include="Domain\Category.cs" />
     <Compile Include="Domain\Comment.cs" />
+    <Compile Include="Domain\Texture.cs" />
+    <Compile Include="Domain\Scene.cs" />
+    <Compile Include="Domain\Project.cs" />
     <Compile Include="Domain\Section.cs" />
     <Compile Include="Presenter\CategoryPresenter.cs" />
     <Compile Include="Presenter\IEntityPresenter.cs" />
@@ -100,6 +110,9 @@
     <Compile Include="Presenter\IItemPresenter.cs" />
     <Compile Include="Presenter\ImagePresenter.cs" />
     <Compile Include="Presenter\ItemPresenter.cs" />
+    <Compile Include="Presenter\TexturePresenter.cs" />
+    <Compile Include="Presenter\ScenePresenter.cs" />
+    <Compile Include="Presenter\ProjectPresenter.cs" />
     <Compile Include="Presenter\ModelPresenter.cs" />
     <Compile Include="Presenter\NameablePresenter.cs" />
     <Compile Include="Presenter\PresenterBase.cs" />
@@ -117,6 +130,9 @@
     <Compile Include="ViewModel\IViewModelBase.cs" />
     <Compile Include="ViewModel\ModelCommentsViewModel.cs" />
     <Compile Include="ViewModel\ModelImagesViewModel.cs" />
+    <Compile Include="ViewModel\SceneViewModel.cs" />
+    <Compile Include="ViewModel\TextureViewModel.cs" />
+    <Compile Include="ViewModel\ProjectViewModel.cs" />
     <Compile Include="ViewModel\ModelViewModel.cs" />
     <Compile Include="ViewModel\NameableViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
@@ -138,6 +154,15 @@
     </Compile>
     <Compile Include="Views\LanguageSettings.xaml.cs">
       <DependentUpon>LanguageSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Scenes.xaml.cs">
+      <DependentUpon>Scenes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Textures.xaml.cs">
+      <DependentUpon>Textures.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Projects.xaml.cs">
+      <DependentUpon>Projects.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Models.xaml.cs">
       <DependentUpon>Models.xaml</DependentUpon>
@@ -191,6 +216,18 @@
     <Page Include="Views\LanguageSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Scenes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Textures.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Projects.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Models.xaml">
       <SubType>Designer</SubType>
