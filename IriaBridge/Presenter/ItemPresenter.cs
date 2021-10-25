@@ -16,9 +16,7 @@ namespace IriaBridge.Presenter
         public decimal Price { get { return Object.Price; } }
         public String Version { get { return Object.Version; } }
 
-        ModelImagesViewModel _modelImagesViewModel = ServiceLocator.Current.GetInstance<ModelImagesViewModel>();
-
-        ModelCommentsViewModel _modelCommentsViewModel = ServiceLocator.Current.GetInstance<ModelCommentsViewModel>();
+        CommentViewModel<TItem> _itemCommentsViewModel = ServiceLocator.Current.GetInstance<CommentViewModel<TItem>>();
 
 
         private ICommand _addToCartCommand = new RelayCommand<IItemPresenter>(ExecuteAddItem, CanExecuteAddItem);
@@ -50,12 +48,16 @@ namespace IriaBridge.Presenter
 
         public ImagePresenter  Image => Images.First();
 
-        public ICollection<CommentPresenter> Comments
+        public CommentViewModel<TItem> Comments
         {
             get
             {
-
-                return Object.Comments.Select(i => new CommentPresenter() { Object = i }).ToArray();
+                if (!_itemCommentsViewModel.IsLoaded)
+                {
+                    _itemCommentsViewModel.Owner = Object;
+                    _itemCommentsViewModel.Load();
+                }
+                return _itemCommentsViewModel;
             }
         }
 

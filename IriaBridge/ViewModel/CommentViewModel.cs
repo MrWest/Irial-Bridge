@@ -10,11 +10,12 @@ using IriaBridge.DataAccess;
 
 namespace IriaBridge.ViewModel
 {
-    public class CommentViewModel: ViewModelBase<Comment,  CommentPresenter, CommentApplication, CommentRepository>
+    public abstract class CommentViewModel<T>: ViewModelBase<Comment,  CommentPresenter<T>, CommentApplication<T>, CommentRepository<T>>
+        where T: Item
     {
-        public int Owner { get; set; }
+        public T Owner { get; set; }
 
-        protected override CommentApplication ApplicationService
+        protected override CommentApplication<T> ApplicationService
         {
             get
             {

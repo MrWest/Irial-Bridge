@@ -88,6 +88,15 @@ namespace IriaBridge.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Irial Items.
+        /// </summary>
+        public static string Irial_Items {
+            get {
+                return ResourceManager.GetString("Irial Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string Language {

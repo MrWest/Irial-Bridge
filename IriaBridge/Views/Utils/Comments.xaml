@@ -4,13 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IriaBridge.Views.Utils"
+             Loaded="UserControl_Loaded"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300" >
     <Grid>
-        <ListView ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=local:Comments}, Path=CommentsSource}" IsManipulationEnabled="False">
+        <ListView
+            ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=local:Comments}, Path=CommentsSource}" 
+            IsManipulationEnabled="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Grid  MaxWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=local:Comments}, Path=ActualWidth}">
+                    <Grid >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
@@ -21,13 +24,11 @@
                                 <ImageBrush ImageSource="{Binding UserImage}" Stretch="UniformToFill"/>
                             </Border.Background>
                         </Border>
-                        <Border  Grid.Column="1" Padding="0,0,16,8">
-                            <StackPanel>
-                                <TextBlock Text="{Binding UserName}"/>
-                                <TextBlock Text="{Binding Date}" Foreground="Gray"/>
-                                <TextBlock Text="{Binding Comment}" TextWrapping="Wrap"  MaxWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=StackPanel}, Path=ActualWidth}"/>
-                            </StackPanel>
-                        </Border>
+                        <StackPanel  Grid.Column="1" >
+                            <TextBlock Text="{Binding UserName}"/>
+                            <TextBlock Text="{Binding Date}" Foreground="Gray"/>
+                            <TextBlock Text="{Binding Comment}" TextWrapping="WrapWithOverflow" />
+                        </StackPanel>
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>

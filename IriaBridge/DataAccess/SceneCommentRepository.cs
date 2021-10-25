@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace IriaBridge.DataAccess
 {
-    public class ModelCommentRepository: CommentRepository<Model>
+    public class SceneCommentRepository: CommentRepository<Scene>
     {
-        protected override String Path { get { return "models/get_model_comments.php"; } }
+        protected override String Path { get { return "scenes/get_scene_comments.php"; } }
     }
 }

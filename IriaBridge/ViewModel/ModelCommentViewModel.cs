@@ -10,7 +10,8 @@ using IriaBridge.DataAccess;
 
 namespace IriaBridge.ViewModel
 {
-    public class ModelCommentsViewModel: CommentViewModel<Model>
+    public class ModelCommentViewModel: CommentViewModel<Model>
     {
+
     }
 }

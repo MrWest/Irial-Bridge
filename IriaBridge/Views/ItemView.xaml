@@ -20,14 +20,14 @@
             <RowDefinition Height="1.4*" MaxHeight="600"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <utils:IrialCarousel Grid.Column="1" Images="{Binding  Images.Items}" />
+        <utils:IrialCarousel Grid.Column="1" Images="{Binding  Images}" />
         <Grid Grid.Row="1" Grid.Column="1" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <TextBlock Text="{Loc Comments}" FontWeight="Bold" Margin="0,24,0,16" />
-            <utils:Comments Grid.Row="1" CommentsSource="{Binding Comments.Items}" />
+            <utils:Comments Grid.Row="1" CommentsSource="{Binding  Comments.Items}" />
         </Grid>
         <StackPanel Grid.Column="2">
             <TextBlock Text="{Binding Name}" FontSize="24" FontWeight="Bold" Margin="0,0,0,16"/>

@@ -51,11 +51,27 @@ namespace IriaBridge
             unityContainer.RegisterType<ImageRepository, ModelImageRepository>();
             unityContainer.RegisterType<ApplicationBase<Image, ImageRepository>, ImagesApplication>();
             // comments
-            unityContainer.RegisterType<PresenterBase<Comment>, CommentPresenter>();
-            unityContainer.RegisterType<Repository<Comment>, ModelCommentRepository>();
-            unityContainer.RegisterType<CommentRepository, ModelCommentRepository>();
-            unityContainer.RegisterType<ApplicationBase<Comment, CommentRepository>, CommentApplication>();
+            unityContainer.RegisterType<CommentPresenter<Model>, ModelCommentPresenter>();
+            unityContainer.RegisterType<CommentViewModel<Model>, ModelCommentViewModel>();
+            unityContainer.RegisterType<CommentRepository<Model>, ModelCommentRepository>();
+            unityContainer.RegisterType<CommentApplication<Model>, ModelCommentApplication>();
 
+            unityContainer.RegisterType<CommentPresenter<Project>, ProjectCommentPresenter>();
+            unityContainer.RegisterType<CommentViewModel<Project>, ProjectCommentViewModel>();
+            unityContainer.RegisterType<CommentRepository<Project>, ProjectCommentRepository>();
+            unityContainer.RegisterType<CommentApplication<Project>, ProjectCommentApplication>();
+
+            unityContainer.RegisterType<CommentPresenter<Texture>, TextureCommentPresenter>();
+            unityContainer.RegisterType<CommentViewModel<Texture>, TextureCommentViewModel>();
+            unityContainer.RegisterType<CommentRepository<Texture>, TextureCommentRepository>();
+            unityContainer.RegisterType<CommentApplication<Texture>, TextureCommentApplication>();
+
+            unityContainer.RegisterType<CommentPresenter<Scene>, SceneCommentPresenter>();
+            unityContainer.RegisterType<CommentViewModel<Scene>, SceneCommentViewModel>();
+            unityContainer.RegisterType<CommentRepository<Scene>, SceneCommentRepository>();
+            unityContainer.RegisterType<CommentApplication<Scene>, SceneCommentApplication>();
+
+            
             //category
             unityContainer.RegisterType<CategoryPresenter, CategoryPresenter>();
             unityContainer.RegisterType<CategoryRepository, CategoryRepository>();

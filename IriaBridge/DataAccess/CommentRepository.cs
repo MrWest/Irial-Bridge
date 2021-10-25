@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace IriaBridge.DataAccess
 {
-    public class CommentRepository: Repository<Comment>
+    public abstract class CommentRepository<T>: Repository<Comment>
+        where T: Item
     {
-        public int Owner { get; set; }
+        public T Owner { get; set; }
+        protected override string Parameters { get => base.Parameters + "id=" + Owner.Id; }
     }
 }

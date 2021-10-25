@@ -8,10 +8,11 @@ using IriaBridge.DataAccess;
 
 namespace IriaBridge.Business
 {
-    public class CommentApplication: ApplicationBase<Comment, CommentRepository>
+    public abstract class CommentApplication<T>: ApplicationBase<Comment, CommentRepository<T>>
+        where T: Item
     {
-        public int Owner { get; set; }
-        protected override CommentRepository Repository
+        public T Owner { get; set; }
+        protected override CommentRepository<T> Repository
         {
             get
             {

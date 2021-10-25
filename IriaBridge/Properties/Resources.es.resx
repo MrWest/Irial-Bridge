@@ -126,6 +126,9 @@
   <data name="Help" xml:space="preserve">
     <value>Ayuda</value>
   </data>
+  <data name="Irial Items" xml:space="preserve">
+    <value>Elementos de Irial</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Lenguaje</value>
   </data>

@@ -7,5 +7,6 @@ namespace IriaBridge.Presenter
         int ItemId { get;  }
         decimal Price { get; }
         String Version { get; }
+
     }
 }

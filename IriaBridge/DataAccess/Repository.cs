@@ -15,9 +15,10 @@ namespace IriaBridge.DataAccess
         static HttpClient Client = new HttpClient { BaseAddress = new Uri("https://solutiontriangle.com/ibackend/ajax/") };
         protected virtual String Path { get; }
         protected virtual String Parameters { get {
-                string _language = LocalizationManager.UICulture.ToString();
-                var lang = _language.Split('-')[0];
-                return "?lang=" + lang;
+                //string _language = LocalizationManager.UICulture.ToString();
+                //var lang = _language.Split('-')[0];
+                //return "?lang=" + lang;
+                return "?";
             } }
         
 

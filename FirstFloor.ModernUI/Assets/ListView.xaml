@@ -110,7 +110,7 @@
                                BorderBrush="{TemplateBinding BorderBrush}"
                                Background="{TemplateBinding Background}"
                                SnapsToDevicePixels="true">
-                        <ScrollViewer Padding="{TemplateBinding Padding}">
+                        <ScrollViewer Padding="{TemplateBinding Padding}" HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}">
                             <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                         </ScrollViewer>
                     </Border>

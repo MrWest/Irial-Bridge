@@ -60,5 +60,6 @@ namespace IriaBridge.Views.Utils
             if (IsVisible && bottomList.SelectedItem == null && bottomList.Items.Count > 0)
                 SelectedImage = (ImagePresenter)bottomList.Items.GetItemAt(0);
         }
+      
     }
 }

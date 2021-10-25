@@ -20,24 +20,11 @@
 
     <mui:ModernWindow.MenuLinkGroups>
 
-        <mui:LinkGroup DisplayName="{Loc Models}">
+        <mui:LinkGroup DisplayName="{Loc Irial Items}">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="{Loc Models}" Source="/Views/Models.xaml" />
-            </mui:LinkGroup.Links>
-        </mui:LinkGroup>
-        <mui:LinkGroup DisplayName="{Loc Projects}" >
-            <mui:LinkGroup.Links>
                 <mui:Link DisplayName="{Loc Projects}"  Source="/Views/Projects.xaml"  />
-            </mui:LinkGroup.Links>
-        </mui:LinkGroup>
-
-        <mui:LinkGroup DisplayName="{Loc Textures}">
-            <mui:LinkGroup.Links>
                 <mui:Link DisplayName="{Loc Textures}"  Source="/Views/Textures.xaml"  />
-            </mui:LinkGroup.Links>
-        </mui:LinkGroup>
-        <mui:LinkGroup DisplayName="{Loc Scenes}" >
-            <mui:LinkGroup.Links>
                 <mui:Link DisplayName="{Loc Scenes}"  Source="/Views/Scenes.xaml"  />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>

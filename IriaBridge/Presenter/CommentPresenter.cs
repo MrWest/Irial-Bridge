@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace IriaBridge.Presenter
 {
-    public class CommentPresenter: PresenterBase<Comment>
+    public class CommentPresenter<T>: PresenterBase<Comment>, ICommentPresenter
+        where T:  Item
     {
+        T Owner { get; set; }
         public String Comment => Object?.Message;
         public String Date => Object?.Date;
         public String UserName => Object?.UserName;

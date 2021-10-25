@@ -80,6 +80,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Business\CategoryApplication.cs" />
+    <Compile Include="Business\TextureCommentApplication.cs" />
+    <Compile Include="Business\SceneCommentApplication.cs" />
+    <Compile Include="Business\ProjectCommentApplication.cs" />
+    <Compile Include="Business\ModelCommentApplication.cs" />
     <Compile Include="Business\CommentApplication.cs" />
     <Compile Include="Business\TextureApplication.cs" />
     <Compile Include="Business\SceneApplication.cs" />
@@ -88,6 +92,9 @@
     <Compile Include="Business\ImagesApplication.cs" />
     <Compile Include="Business\SectionApplication.cs" />
     <Compile Include="DataAccess\CategoryRepository.cs" />
+    <Compile Include="DataAccess\TextureCommentRepository.cs" />
+    <Compile Include="DataAccess\SceneCommentRepository.cs" />
+    <Compile Include="DataAccess\ProjectCommentRepository.cs" />
     <Compile Include="DataAccess\CommentRepository.cs" />
     <Compile Include="DataAccess\ImageRepository.cs" />
     <Compile Include="DataAccess\ModelCommentRepository.cs" />
@@ -104,6 +111,11 @@
     <Compile Include="Domain\Project.cs" />
     <Compile Include="Domain\Section.cs" />
     <Compile Include="Presenter\CategoryPresenter.cs" />
+    <Compile Include="Presenter\ICommentPresenter.cs" />
+    <Compile Include="Presenter\TextureCommentPresenter.cs" />
+    <Compile Include="Presenter\SceneCommentPresenter.cs" />
+    <Compile Include="Presenter\ProjectCommentPresenter.cs" />
+    <Compile Include="Presenter\ModelCommentPresenter.cs" />
     <Compile Include="Presenter\IEntityPresenter.cs" />
     <Compile Include="Presenter\CommentPresenter.cs" />
     <Compile Include="Presenter\INameablePresenter.cs" />
@@ -124,6 +136,10 @@
     </Compile>
     <Compile Include="ViewModel\CartViewModel.cs" />
     <Compile Include="ViewModel\CategoryViewModel.cs" />
+    <Compile Include="ViewModel\TextureCommentViewModel.cs" />
+    <Compile Include="ViewModel\SceneCommentViewModel.cs" />
+    <Compile Include="ViewModel\ProjectCommentViewModel.cs" />
+    <Compile Include="ViewModel\ModelCommentViewModel.cs" />
     <Compile Include="ViewModel\CommentViewModel.cs" />
     <Compile Include="ViewModel\ItemViewModel.cs" />
     <Compile Include="ViewModel\ImageViewModel.cs" />

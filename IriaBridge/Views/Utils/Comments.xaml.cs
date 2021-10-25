@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,12 +22,14 @@ namespace IriaBridge.Views.Utils
     /// <summary>
     /// Interaction logic for Comments.xaml
     /// </summary>
-    public partial class Comments : UserControl
+    public partial class Comments: UserControl
+
+
     {
         /// <summary>
         /// Identifies the ContentLoader dependency property.
         /// </summary>
-        public static readonly DependencyProperty CommentsProperty = DependencyProperty.Register("CommentsSource", typeof(ICollection<CommentPresenter>), typeof(Comments), new PropertyMetadata(new ObservableCollection<CommentPresenter>()));
+        public static readonly DependencyProperty CommentsSourceProperty = DependencyProperty.Register("CommentsSource", typeof(object), typeof(Comments), new PropertyMetadata(null));
 
         public Comments()
         {
@@ -36,10 +39,40 @@ namespace IriaBridge.Views.Utils
         /// <summary>
         /// Gets or sets the background content of this window instance.
         /// </summary>
-        public ICollection<CommentPresenter> CommentsSource
+        public object CommentsSource
         {
-            get { return (ICollection<CommentPresenter>)GetValue(CommentsProperty); }
-            set { SetValue(CommentsProperty, value); }
+            get { return (object)GetValue(CommentsSourceProperty); }
+            set { SetValue(CommentsSourceProperty, value); }
+        }
+
+    
+        #region INotifyPropertyChanged Implementation
+
+        /*
+         * Create an event to fire when a property is changed
+         */
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        // This method is called by the Set accessor of each property. 
+        // The CallerMemberName attribute that is applied to the optional propertyName 
+        // parameter causes the property name of the caller to be substituted as an argument. 
+        private void NotifyPropertyChanged(string propertyName)
+        {
+            // Invalid Event
+            if (PropertyChanged == null)
+                return;
+
+            // Fire the event
+            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+
+        }
+
+        #endregion
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            //var shit = ((ModelPresenter)(this.DataContext)).Comments.Items;
+            //var crap =((ICommentPresenter) (shit.First()));
         }
     }
 }
