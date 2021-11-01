@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace IriaBridge.ViewModel
 {
-    public class NameableViewModel<TNameable>: ViewModelBase<TNameable, PresenterBase<TNameable>, ApplicationBase<TNameable, Repository<TNameable>>, Repository<TNameable>> 
+    public class NameableViewModel<TNameable>: ViewModelBase<TNameable, IGenericPresenter<TNameable>, ApplicationBase<TNameable, Repository<TNameable>>, Repository<TNameable>> 
         where TNameable: Nameable
     {
 

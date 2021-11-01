@@ -34,12 +34,20 @@ namespace IriaBridge.DataAccess
 
         private BridgeItem ProcessDirectory(string directory)
         {
-
             string readText = File.ReadAllText(directory + @"\data\info.txt");
 
             var bItem = JsonConvert.DeserializeObject<BridgeItem>(readText);
             bItem.PreviewImage = directory + @"\data\preview.jpg";
+            bItem.DataInfoPath = directory + @"\data\info.txt";
+            bItem.Directory = directory;
             return bItem;
+        }
+
+        public override BridgeItem UpdateEntity(BridgeItem entity)
+        {
+            var bItem = JsonConvert.SerializeObject(entity);
+            File.WriteAllText(entity.DataInfoPath, bItem);
+            return entity;
         }
     }
 }

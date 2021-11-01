@@ -12,5 +12,6 @@ namespace IriaBridge.Presenter
         String Status { get; }
         String Date { get; }
         String PreviewImage { get; }
+        void Export();
     }
 }

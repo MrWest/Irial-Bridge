@@ -13,16 +13,29 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="2">
-            <TextBox Text="{Binding Name, Mode=TwoWay}" FontSize="24" FontWeight="Bold" Margin="0,0,0,16"/>
-            <TextBox Text="{Binding Description, Mode=TwoWay}" TextWrapping="Wrap"  Margin="0,0,0,16"/>
-
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="24" />
+        </Grid.RowDefinitions>
         <StackPanel>
-            <TextBlock Text="{Loc Preview Image}" />
+            <TextBlock Text="{Loc Preview Image}" Margin="0,12,0,8"/>
             <Image Source="{Binding PreviewImage}" />
         </StackPanel>
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="32,0,0,0">
+            <TextBox Text="{Binding Name, Mode=TwoWay}" FontSize="24" FontWeight="Bold" Margin="0,0,0,16"/>
+            <TextBox
+                Height="200"
+                Text="{Binding Description, Mode=TwoWay}"
+                TextWrapping="Wrap"
+                AcceptsReturn="True"
+                HorizontalScrollBarVisibility="Disabled"
+                VerticalScrollBarVisibility="Auto"/>
+
+        </StackPanel>
+        <Button Grid.Column="2" Grid.Row="1" Content="{Loc Export}" Command="{Binding ExportCommand}" CommandParameter="{Binding }" />
 
     </Grid>
 </UserControl>

@@ -126,6 +126,9 @@
   <data name="Comments" xml:space="preserve">
     <value>Comentarios</value>
   </data>
+  <data name="Export" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
   <data name="Help" xml:space="preserve">
     <value>Ayuda</value>
   </data>

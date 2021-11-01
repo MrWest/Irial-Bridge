@@ -16,7 +16,7 @@ namespace IriaBridge.ViewModel
 {
     public class ViewModelBase<T, TPresenter, TApplication, TRepository>: INotifyPropertyChanged, IViewModelBase
         where T: Entity 
-        where TPresenter: PresenterBase<T, TApplication>
+        where TPresenter: IGenericPresenter<T>
         where TRepository: Repository<T>
         where TApplication: ApplicationBase<T, TRepository>
     {
