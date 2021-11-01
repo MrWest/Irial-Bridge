@@ -19,13 +19,22 @@
     </mui:ModernWindow.TitleLinks>
 
     <mui:ModernWindow.MenuLinkGroups>
-
+        <mui:LinkGroup DisplayName="{Loc Home}">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="{Loc Home}" Source="/Views/Introduction.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
         <mui:LinkGroup DisplayName="{Loc Irial Items}">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="{Loc Models}" Source="/Views/Models.xaml" />
                 <mui:Link DisplayName="{Loc Projects}"  Source="/Views/Projects.xaml"  />
                 <mui:Link DisplayName="{Loc Textures}"  Source="/Views/Textures.xaml"  />
                 <mui:Link DisplayName="{Loc Scenes}"  Source="/Views/Scenes.xaml"  />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="{Loc Local Gallery}">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="{Loc Bridge Items}" Source="/Views/BridgeItems.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="{Loc Settings}" GroupKey="settings" >

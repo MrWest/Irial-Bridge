@@ -1,4 +1,5 @@
 ﻿using CommonServiceLocator;
+using IriaBridge.Business;
 using IriaBridge.Domain;
 using IriaBridge.ViewModel;
 using System;
@@ -10,7 +11,9 @@ using System.Windows.Input;
 
 namespace IriaBridge.Presenter
 {
-    public class ItemPresenter<TItem>: NameablePresenter<TItem>, IItemPresenter where TItem: Item
+    public class ItemPresenter<TItem, TApplication>: NameablePresenter<TItem, TApplication>, IItemPresenter
+        where TItem: Item
+         where TApplication : IApplicationBase<TItem>
     {
 
         public decimal Price { get { return Object.Price; } }
@@ -29,7 +32,7 @@ namespace IriaBridge.Presenter
 
             if (cartViewModel.Items.Count == 0) return true;
 
-            var result = cartViewModel.Items.FirstOrDefault(item => item.ItemId == obj.ItemId);
+            var result = cartViewModel.Items.FirstOrDefault(item => item.Id == obj.Id);
 
             return result == null;
         }

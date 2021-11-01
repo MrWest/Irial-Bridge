@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="IriaBridge.Views.Common.BridgeItemCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converter="clr-namespace:IriaBridge.Views.Converter"
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Margin="0,0,0,16">
+    <UserControl.Resources>
+        <converter:MediumImageConverter  x:Key="MediumConverter" />
+        <Style x:Key="ModernButtonStyle" TargetType="{x:Type mui:ModernButton}">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource Accent}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Margin" Value="0,0,10,0"/>
+            <Setter Property="Foreground" Value="{DynamicResource Accent}"/>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled"  Value="False">
+                    <Setter Property="Foreground"  Value="DarkGray" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid  x:Name="itemCard"  Cursor="Hand">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="52" />
+            <ColumnDefinition Width="*"  />
+        </Grid.ColumnDefinitions>
+        <Path  Data="M 49.75 12 A 2.0001993 2.0001993 0 0 0 49.28125 12.125 L 16.28125 25.125 A 2.0001993 2.0001993 0 0 0 15.375 25.8125 L 7.375 36.8125 A 2.0001993 2.0001993 0 0 0 8.21875 39.8125 L 13 41.875 L 13 58.96875 A 2.0001993 2.0001993 0 1 0 17 58.96875 L 17 43.625 L 38.21875 52.8125 A 2.0001993 2.0001993 0 0 0 40.40625 52.40625 L 48 44.8125 L 48 82.96875 L 17 69.6875 L 17 66.8125 A 2.0001993 2.0001993 0 1 0 13 66.8125 L 13 71 A 2.0001993 2.0001993 0 0 0 14.21875 72.8125 L 49.21875 87.8125 A 2.0001993 2.0001993 0 0 0 50.78125 87.8125 L 85.78125 72.8125 A 2.0001993 2.0001993 0 0 0 87 71 L 87 41.875 L 91.78125 39.8125 A 2.0001993 2.0001993 0 0 0 92.625 36.8125 L 84.625 25.8125 A 2.0001993 2.0001993 0 0 0 83.71875 25.125 L 50.71875 12.125 A 2.0001993 2.0001993 0 0 0 49.75 12 z M 50 16.125 L 78.625 27.40625 L 50 38.8125 L 21.375 27.40625 L 50 16.125 z M 17.25 30.0625 L 45.71875 41.4375 L 38.53125 48.625 L 12.09375 37.15625 L 17.25 30.0625 z M 82.75 30.0625 L 87.90625 37.15625 L 61.46875 48.625 L 54.28125 41.4375 L 82.75 30.0625 z M 83 43.625 L 83 69.6875 L 52 82.96875 L 52 44.8125 L 59.59375 52.40625 A 2.0001993 2.0001993 0 0 0 61.78125 52.8125 L 83 43.625 z "
+               Margin="0,5,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Fill="{DynamicResource Accent}" Height="32" Stretch="Fill" Width="38"  />
+
+        
+        <StackPanel Grid.Column="1">
+            <Grid  VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=Name}" Foreground="Blue"  FontSize="18" />
+                <TextBlock  Grid.Column="1" Background="{DynamicResource Accent}" Padding="12,5" >Installed</TextBlock>
+            </Grid>
+            <TextBlock Text="{Binding Path=Type}" FontWeight="Medium" Foreground="DimGray" />
+            <TextBlock Text="{Binding Path=Description}" Foreground="DimGray" TextWrapping="Wrap" />
+            <TextBlock Text="{Binding Path=Date}" Foreground="DimGray" />
+            <mui:BBCodeBlock  TextAlignment="Right" BBCode="[url=/Pages/LayoutWireframe.xaml]Exportar[/url]" />
+
+        </StackPanel>
+    </Grid>
+</UserControl>

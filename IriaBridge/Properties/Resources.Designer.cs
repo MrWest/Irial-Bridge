@@ -70,6 +70,15 @@ namespace IriaBridge.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bridge Items.
+        /// </summary>
+        public static string Bridge_Items {
+            get {
+                return ResourceManager.GetString("Bridge Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comments.
         /// </summary>
         public static string Comments {
@@ -84,6 +93,15 @@ namespace IriaBridge.Properties {
         public static string Help {
             get {
                 return ResourceManager.GetString("Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
             }
         }
         
@@ -106,11 +124,29 @@ namespace IriaBridge.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Local Gallery.
+        /// </summary>
+        public static string Local_Gallery {
+            get {
+                return ResourceManager.GetString("Local Gallery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Models.
         /// </summary>
         public static string Models {
             get {
                 return ResourceManager.GetString("Models", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preview Image.
+        /// </summary>
+        public static string Preview_Image {
+            get {
+                return ResourceManager.GetString("Preview Image", resourceCulture);
             }
         }
         

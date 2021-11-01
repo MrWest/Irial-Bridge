@@ -28,9 +28,9 @@ namespace IriaBridge.DataAccess
                 var result = task.Result;
                 return result;
             }
-    }
+        }
 
-        protected async Task<ICollection<T>> GetRepository()
+        protected virtual async Task<ICollection<T>> GetRepository()
         {
             try
             {
@@ -47,6 +47,12 @@ namespace IriaBridge.DataAccess
                  Console.WriteLine("Message :{0} ",e.Message);
               }
                 return null;
+        }
+
+        public virtual T UpdateEntity(T entity)
+        {
+            return entity;
+            
         }
 
     }

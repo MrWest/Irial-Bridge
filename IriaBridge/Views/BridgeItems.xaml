@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="IriaBridge.Views.BridgeItems"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:IriaBridge"
+             mc:Ignorable="d"
+             xmlns:vw="clr-namespace:IriaBridge.ViewModel"
+             xmlns:common="clr-namespace:IriaBridge.Views.Common"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <vw:BridgeItemViewModel />
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"  />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ListView ItemsSource="{Binding Items}" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                  SelectedItem="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=local:MainWindow}, Path=SelectedItem, Mode=TwoWay}" >
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <common:BridgeItemCard />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="4" Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=ActualWidth}"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ListView>
+    </Grid>
+</UserControl>

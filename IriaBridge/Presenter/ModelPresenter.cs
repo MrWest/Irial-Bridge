@@ -1,4 +1,5 @@
-﻿using IriaBridge.Domain;
+﻿using IriaBridge.Business;
+using IriaBridge.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IriaBridge.Presenter
 {
-    public class ModelPresenter: ItemPresenter<Model>
+    public class ModelPresenter: ItemPresenter<Model, ModelApplication>
     {
     }
 }

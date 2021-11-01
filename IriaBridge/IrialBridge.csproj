@@ -79,7 +79,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Business\BridgeItemApplication.cs" />
     <Compile Include="Business\CategoryApplication.cs" />
+    <Compile Include="Business\IApplicationBase.cs" />
     <Compile Include="Business\TextureCommentApplication.cs" />
     <Compile Include="Business\SceneCommentApplication.cs" />
     <Compile Include="Business\ProjectCommentApplication.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="Business\ModelApplication.cs" />
     <Compile Include="Business\ImagesApplication.cs" />
     <Compile Include="Business\SectionApplication.cs" />
+    <Compile Include="DataAccess\BridgeItemRepository.cs" />
     <Compile Include="DataAccess\CategoryRepository.cs" />
     <Compile Include="DataAccess\TextureCommentRepository.cs" />
     <Compile Include="DataAccess\SceneCommentRepository.cs" />
@@ -106,12 +109,16 @@
     <Compile Include="DataAccess\SectionRepository.cs" />
     <Compile Include="Domain\Category.cs" />
     <Compile Include="Domain\Comment.cs" />
+    <Compile Include="Domain\BridgeItem.cs" />
     <Compile Include="Domain\Texture.cs" />
     <Compile Include="Domain\Scene.cs" />
     <Compile Include="Domain\Project.cs" />
     <Compile Include="Domain\Section.cs" />
+    <Compile Include="Presenter\BridgeItemPresenter.cs" />
     <Compile Include="Presenter\CategoryPresenter.cs" />
+    <Compile Include="Presenter\IBridgeItemPresenter.cs" />
     <Compile Include="Presenter\ICommentPresenter.cs" />
+    <Compile Include="Presenter\IGenericPresenter.cs" />
     <Compile Include="Presenter\TextureCommentPresenter.cs" />
     <Compile Include="Presenter\SceneCommentPresenter.cs" />
     <Compile Include="Presenter\ProjectCommentPresenter.cs" />
@@ -134,6 +141,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.es.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\BridgeItemViewModel.cs" />
     <Compile Include="ViewModel\CartViewModel.cs" />
     <Compile Include="ViewModel\CategoryViewModel.cs" />
     <Compile Include="ViewModel\TextureCommentViewModel.cs" />
@@ -154,6 +162,9 @@
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\SectionViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="Views\Common\BridgeItemCard.xaml.cs">
+      <DependentUpon>BridgeItemCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Common\ItemCard.xaml.cs">
       <DependentUpon>ItemCard.xaml</DependentUpon>
     </Compile>
@@ -165,11 +176,17 @@
     <Compile Include="Views\IrialCart.xaml.cs">
       <DependentUpon>IrialCart.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\BridgeItemView.xaml.cs">
+      <DependentUpon>BridgeItemView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ItemView.xaml.cs">
       <DependentUpon>ItemView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LanguageSettings.xaml.cs">
       <DependentUpon>LanguageSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BridgeItems.xaml.cs">
+      <DependentUpon>BridgeItems.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Scenes.xaml.cs">
       <DependentUpon>Scenes.xaml</DependentUpon>
@@ -213,6 +230,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Common\BridgeItemCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Common\ItemCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -225,6 +246,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\BridgeItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -232,6 +257,10 @@
     <Page Include="Views\LanguageSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BridgeItems.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Scenes.xaml">
       <Generator>MSBuild:Compile</Generator>

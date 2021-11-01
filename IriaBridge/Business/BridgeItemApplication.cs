@@ -1,4 +1,4 @@
-﻿using IriaBridge.Business;
+﻿using IriaBridge.DataAccess;
 using IriaBridge.Domain;
 using System;
 using System.Collections.Generic;
@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IriaBridge.Presenter
+namespace IriaBridge.Business
 {
-    public class TexturePresenter: ItemPresenter<Texture, TextureApplication>
+    public  class BridgeItemApplication: ApplicationBase<BridgeItem, BridgeItemRepository>
     {
     }
 }

@@ -31,22 +31,26 @@ namespace IriaBridge
             UnityContainer unityContainer = new UnityContainer();
             //model
             unityContainer.RegisterType<Repository<Model>, ModelRepository>();
-            unityContainer.RegisterType<PresenterBase<Model>, ModelPresenter>();
+            unityContainer.RegisterType<IGenericPresenter<Model>, ModelPresenter>();
+            unityContainer.RegisterType<IApplicationBase<Model>, ModelApplication>();
             unityContainer.RegisterType<ApplicationBase<Model, ModelRepository>, ModelApplication>();
             //project
             unityContainer.RegisterType<Repository<Project>, ProjectRepository>();
-            unityContainer.RegisterType<PresenterBase<Project>, ProjectPresenter>();
+            unityContainer.RegisterType<IGenericPresenter<Project>, ProjectPresenter>();
+            unityContainer.RegisterType<IApplicationBase<Project>, ProjectApplication>();
             unityContainer.RegisterType<ApplicationBase<Project, ProjectRepository>, ProjectApplication>();
             //textures
             unityContainer.RegisterType<Repository<Texture>, TextureRepository>();
-            unityContainer.RegisterType<PresenterBase<Texture>, TexturePresenter>();
+            unityContainer.RegisterType<IGenericPresenter<Texture>, TexturePresenter>();
+            unityContainer.RegisterType<IApplicationBase<Texture>, TextureApplication>();
             unityContainer.RegisterType<ApplicationBase<Texture, TextureRepository>, TextureApplication>();
             //scenes
             unityContainer.RegisterType<Repository<Scene>, SceneRepository>();
-            unityContainer.RegisterType<PresenterBase<Scene>, ScenePresenter>();
+            unityContainer.RegisterType<IGenericPresenter<Scene>, ScenePresenter>();
+            unityContainer.RegisterType<IApplicationBase<Scene>, SceneApplication>();
             unityContainer.RegisterType<ApplicationBase<Scene, SceneRepository>, SceneApplication>();
             // images
-            unityContainer.RegisterType<PresenterBase<Image>, ImagePresenter>();
+            unityContainer.RegisterType<IGenericPresenter<Image>, ImagePresenter>();
             unityContainer.RegisterType<Repository<Image>, ModelImageRepository>();
             unityContainer.RegisterType<ImageRepository, ModelImageRepository>();
             unityContainer.RegisterType<ApplicationBase<Image, ImageRepository>, ImagesApplication>();
@@ -71,7 +75,12 @@ namespace IriaBridge
             unityContainer.RegisterType<CommentRepository<Scene>, SceneCommentRepository>();
             unityContainer.RegisterType<CommentApplication<Scene>, SceneCommentApplication>();
 
-            
+            //bridges
+            unityContainer.RegisterType<Repository<BridgeItem>, BridgeItemRepository>();
+            unityContainer.RegisterType<IGenericPresenter<BridgeItem>, BridgeItemPresenter>();
+            unityContainer.RegisterType<IApplicationBase<BridgeItem>, BridgeItemApplication>();
+            unityContainer.RegisterType<ApplicationBase<BridgeItem, BridgeItemRepository>, BridgeItemApplication>();
+
             //category
             unityContainer.RegisterType<CategoryPresenter, CategoryPresenter>();
             unityContainer.RegisterType<CategoryRepository, CategoryRepository>();

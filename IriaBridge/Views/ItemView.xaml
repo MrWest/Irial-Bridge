@@ -11,17 +11,15 @@
              DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=local:MainWindow}, Path=ShowingItem}">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="92"/>
-            <ColumnDefinition Width="2.7*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="92"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.4*" MaxHeight="600"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <utils:IrialCarousel Grid.Column="1" Images="{Binding  Images}" />
-        <Grid Grid.Row="1" Grid.Column="1" >
+        <utils:IrialCarousel Images="{Binding  Images}" />
+        <Grid Grid.Row="1" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -29,7 +27,7 @@
             <TextBlock Text="{Loc Comments}" FontWeight="Bold" Margin="0,24,0,16" />
             <utils:Comments Grid.Row="1" CommentsSource="{Binding  Comments.Items}" />
         </Grid>
-        <StackPanel Grid.Column="2">
+        <StackPanel Grid.Column="1">
             <TextBlock Text="{Binding Name}" FontSize="24" FontWeight="Bold" Margin="0,0,0,16"/>
             <TextBlock Text="{Binding Description}" TextWrapping="Wrap"  Margin="0,0,0,16"/>
             <TextBlock Text="{Binding Price}" FontSize="20" FontWeight="Bold"  Margin="0,0,0,54"/>

@@ -2,7 +2,7 @@
 
 namespace IriaBridge.Presenter
 {
-    public interface INameablePresenter
+    public interface INameablePresenter: IEntityPresenter
     {
         String Name { get; }
         String Description { get; }

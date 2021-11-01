@@ -1,5 +1,4 @@
-﻿using IriaBridge.Business;
-using IriaBridge.Domain;
+﻿using IriaBridge.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace IriaBridge.Presenter
 {
-    public class TexturePresenter: ItemPresenter<Texture, TextureApplication>
+    public interface IGenericPresenter<T>
+        where T: Entity
     {
+        T Object { get; set; }
     }
 }

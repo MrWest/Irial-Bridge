@@ -120,11 +120,17 @@
   <data name="Apparence" xml:space="preserve">
     <value>Apariencia</value>
   </data>
+  <data name="Bridge Items" xml:space="preserve">
+    <value>Elementos en Bridge</value>
+  </data>
   <data name="Comments" xml:space="preserve">
     <value>Comentarios</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Ayuda</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Inicio</value>
   </data>
   <data name="Irial Items" xml:space="preserve">
     <value>Elementos de Irial</value>
@@ -132,8 +138,14 @@
   <data name="Language" xml:space="preserve">
     <value>Lenguaje</value>
   </data>
+  <data name="Local Gallery" xml:space="preserve">
+    <value>Galeria Local</value>
+  </data>
   <data name="Models" xml:space="preserve">
     <value>Modelos</value>
+  </data>
+  <data name="Preview Image" xml:space="preserve">
+    <value>Imagen Previa</value>
   </data>
   <data name="Projects" xml:space="preserve">
     <value>Projectos</value>

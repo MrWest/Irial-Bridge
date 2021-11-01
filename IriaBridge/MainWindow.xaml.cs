@@ -31,24 +31,28 @@ namespace IriaBridge
         /// <summary>
         /// Identifies the ContentLoader dependency property.
         /// </summary>
-        public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register("SelectedItem", typeof(IItemPresenter), typeof(MainWindow), new PropertyMetadata(null, OnSelectedItemChanged));
+        public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register("SelectedItem", typeof(INameablePresenter), typeof(MainWindow), new PropertyMetadata(null, OnSelectedItemChanged));
 
         /// <summary>
         /// Identifies the ContentLoader dependency property.
         /// </summary>
-        public static readonly DependencyProperty ShowingItemProperty = DependencyProperty.Register("ShowingItem", typeof(IItemPresenter), typeof(MainWindow), new PropertyMetadata(null, OnSelectedItemChanged));
+        public static readonly DependencyProperty ShowingItemProperty = DependencyProperty.Register("ShowingItem", typeof(INameablePresenter), typeof(MainWindow), new PropertyMetadata(null, OnSelectedItemChanged));
 
         private static void OnSelectedItemChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
-            ((MainWindow)o).NavigeteOnNewItem((IItemPresenter)e.NewValue);
+            ((MainWindow)o).NavigeteOnNewItem((INameablePresenter)e.NewValue);
         }
 
-        private void NavigeteOnNewItem(IItemPresenter newValue)
+        private void NavigeteOnNewItem(INameablePresenter newValue)
         {
             if(newValue != null )
             {
                 ShowingItem = newValue;
-                ContentSource = new Uri("/Views/ItemView.xaml", UriKind.Relative);
+                var interfaces = ShowingItem.GetType().GetInterfaces();
+                if(interfaces.Contains(typeof(IItemPresenter)))
+                    ContentSource = new Uri("/Views/ItemView.xaml", UriKind.Relative);
+                else
+                    ContentSource = new Uri("/Views/BridgeItemView.xaml", UriKind.Relative);
                 SelectedItem = null;
             }
         }
@@ -74,18 +78,18 @@ namespace IriaBridge
         /// <summary>
         /// Gets or sets the background content of this window instance.
         /// </summary>
-        public IItemPresenter SelectedItem
+        public INameablePresenter SelectedItem
         {
-            get { return (IItemPresenter)GetValue(SelectedItemProperty); }
+            get { return (INameablePresenter)GetValue(SelectedItemProperty); }
             set { SetValue(SelectedItemProperty, value); }
         }
 
         /// <summary>
         /// Gets or sets the background content of this window instance.
         /// </summary>
-        public IItemPresenter ShowingItem
+        public INameablePresenter ShowingItem
         {
-            get { return (IItemPresenter)GetValue(ShowingItemProperty); }
+            get { return (INameablePresenter)GetValue(ShowingItemProperty); }
             set { SetValue(ShowingItemProperty, value); }
         }
 

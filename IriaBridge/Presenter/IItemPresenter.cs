@@ -2,9 +2,8 @@
 
 namespace IriaBridge.Presenter
 {
-    public interface IItemPresenter
+    public interface IItemPresenter: INameablePresenter
     {
-        int ItemId { get;  }
         decimal Price { get; }
         String Version { get; }
 
