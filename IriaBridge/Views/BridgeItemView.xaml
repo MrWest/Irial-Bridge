@@ -4,11 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IriaBridge"
-             xmlns:utils="clr-namespace:IriaBridge.Views.Utils"
-             xmlns:properties="clr-namespace:IriaBridge.Properties"
+             xmlns:converter="clr-namespace:IriaBridge.Views.Converter"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=local:MainWindow}, Path=ShowingItem}">
+    <UserControl.Resources>
+        <converter:UriToCachedImageConverter  x:Key="UriToCachedImageConverter" />
+        <Style x:Key="InstallationButtonStyle"  BasedOn="{StaticResource BaseButtonStyle}" TargetType="{x:Type Button}">
+            <Setter Property="Content" Value="{Loc Install}" />
+            <Setter Property="Command" Value="{Binding InstallCommand}" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsInstalled}"  Value="True">
+                    <Setter Property="Content"  Value="{Loc Uninstall}" />
+                    <Setter Property="Command" Value="{Binding UninstallCommand}" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -22,12 +34,14 @@
         </Grid.RowDefinitions>
         <StackPanel>
             <TextBlock Text="{Loc Preview Image}" Margin="0,12,0,8"/>
-            <Image Source="{Binding PreviewImage}" />
+            <Image Source="{Binding PreviewImage, Converter={StaticResource UriToCachedImageConverter}}" Height="200"  Margin="0,0,0,8"/>
+            <Button HorizontalAlignment="Center" Content="{Loc Change}" Command="{Binding ChangePreviewCommand}" CommandParameter="{Binding }" />
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="32,0,0,0">
-            <TextBox Text="{Binding Name, Mode=TwoWay}" FontSize="24" FontWeight="Bold" Margin="0,0,0,16"/>
+            <Button HorizontalAlignment="Right"  CommandParameter="{Binding }" Style="{StaticResource InstallationButtonStyle}"/>
+            <TextBox Text="{Binding Name, Mode=TwoWay}" FontSize="24" FontWeight="Bold" Margin="0,18,0,16"/>
             <TextBox
-                Height="200"
+                Height="180"
                 Text="{Binding Description, Mode=TwoWay}"
                 TextWrapping="Wrap"
                 AcceptsReturn="True"

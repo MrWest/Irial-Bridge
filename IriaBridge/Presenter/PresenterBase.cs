@@ -16,7 +16,8 @@ namespace IriaBridge.Presenter
         where T : Entity
         where TApplication : IApplicationBase<T>
     {
-        protected TApplication _application = ServiceLocator.Current.GetInstance<TApplication>();
+        TApplication _application = ServiceLocator.Current.GetInstance<TApplication>();
+        protected virtual TApplication ApplicationService { get { return _application; } }
         public T Object { get; set; }
         public int Id { get { return Object.Id; } }
 
@@ -29,13 +30,13 @@ namespace IriaBridge.Presenter
 
            
                 // Do nothing if the entity cannot be updated or there cannot be executed the update altogether
-                if (!_application.CanUpdate(Object))
+                if (!ApplicationService.CanUpdate(Object))
                     return false;
 
                 try
                 {
-                    // Update the entity
-                    _application.UpdateEntity(Object);
+                 // Update the entity
+                    ApplicationService.UpdateEntity(Object);
                     return true;
                 }
                 catch (Exception exception)

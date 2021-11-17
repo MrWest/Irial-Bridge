@@ -53,6 +53,7 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -81,6 +82,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Business\BridgeItemApplication.cs" />
+    <Compile Include="Business\BridgeSettingsApplication.cs" />
     <Compile Include="Business\CategoryApplication.cs" />
     <Compile Include="Business\IApplicationBase.cs" />
     <Compile Include="Business\TextureCommentApplication.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="Business\ImagesApplication.cs" />
     <Compile Include="Business\SectionApplication.cs" />
     <Compile Include="DataAccess\BridgeItemRepository.cs" />
+    <Compile Include="DataAccess\BridgeSettingsRepository.cs" />
     <Compile Include="DataAccess\CategoryRepository.cs" />
     <Compile Include="DataAccess\TextureCommentRepository.cs" />
     <Compile Include="DataAccess\SceneCommentRepository.cs" />
@@ -142,6 +145,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.es.resx</DependentUpon>
     </Compile>
+    <Compile Include="SystemSettings\BridgeSettingsPresenter.cs" />
+    <Compile Include="Domain\BridgeSettings.cs" />
     <Compile Include="ViewModel\BridgeItemViewModel.cs" />
     <Compile Include="ViewModel\CartViewModel.cs" />
     <Compile Include="ViewModel\CategoryViewModel.cs" />
@@ -171,8 +176,12 @@
     </Compile>
     <Compile Include="Views\Converter\SmallImageConverter.cs" />
     <Compile Include="Views\Converter\MediumImageConverter.cs" />
+    <Compile Include="Views\Converter\UriToCachedImageConverter.cs" />
     <Compile Include="Views\Introduction.xaml.cs">
       <DependentUpon>Introduction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IrialBridgeSystem.xaml.cs">
+      <DependentUpon>IrialBridgeSystem.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\IrialCart.xaml.cs">
       <DependentUpon>IrialCart.xaml</DependentUpon>
@@ -242,6 +251,10 @@
     <Page Include="Views\Introduction.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\IrialBridgeSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
     <Page Include="Views\IrialCart.xaml">
       <SubType>Designer</SubType>
@@ -343,5 +356,6 @@
       <Name>WPFLocalization</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

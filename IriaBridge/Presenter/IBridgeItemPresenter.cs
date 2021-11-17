@@ -11,7 +11,11 @@ namespace IriaBridge.Presenter
         String Type { get; }
         String Status { get; }
         String Date { get; }
-        String PreviewImage { get; }
+        String PreviewImage { get; set; }
+        bool IsInstalled { get;  }
         void Export();
+        void ChangePreview(string newImagePath);
+        void Install();
+        void Uninstall();
     }
 }

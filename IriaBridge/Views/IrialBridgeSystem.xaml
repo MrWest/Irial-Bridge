@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="IriaBridge.Views.IrialBridgeSystem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:properties="clr-namespace:IriaBridge.Properties"
+             xmlns:presenter="clr-namespace:IriaBridge.SystemSettings"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <presenter:BridgeSettingsPresenter />
+    </UserControl.DataContext>
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="{Loc LocalRepository}" />
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding LocalRepository}" />
+                <Button Grid.Column="1" DockPanel.Dock="Right" Content="{Loc Change}" Width="100" Click="LocalRepositoryButton_Click" />
+            </Grid>
+            <TextBlock Text="{Loc ExportDirectory}"  Margin="0,12,0,0"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding ExportDirectory}" />
+                <Button Grid.Column="1"  DockPanel.Dock="Right" Content="{Loc Change}" Width="100" Click="ExportDirectoryButton_Click" />
+            </Grid>
+            <ComboBox x:Name="LangCombo" ItemsSource="{Binding LumionVersions}" Margin="0,16,0,0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

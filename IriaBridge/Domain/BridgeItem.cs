@@ -14,5 +14,7 @@ namespace IriaBridge.Domain
         public String PreviewImage { get; set; }
         public String DataInfoPath { get; set; }
         public String Directory { get; set; }
+        public String DataDirectory { get; set; }
+        public String InstallDirectory { get; set; }
     }
 }

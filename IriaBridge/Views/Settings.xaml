@@ -12,6 +12,7 @@
             <mui:ModernTab.Links>
                 <mui:Link DisplayName="{Loc Apparence}" Source="/Views/SettingsAppearance.xaml" />
                 <mui:Link DisplayName="{Loc Language}" Source="/Views/LanguageSettings.xaml" />
+                <mui:Link DisplayName="{Loc System}" Source="/Views/IrialBridgeSystem.xaml" />
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>

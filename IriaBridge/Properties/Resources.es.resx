@@ -123,17 +123,29 @@
   <data name="Bridge Items" xml:space="preserve">
     <value>Elementos en Bridge</value>
   </data>
+  <data name="Change" xml:space="preserve">
+    <value>Cambiar</value>
+  </data>
   <data name="Comments" xml:space="preserve">
     <value>Comentarios</value>
   </data>
   <data name="Export" xml:space="preserve">
     <value>Exportar</value>
   </data>
+  <data name="ExportDirectory" xml:space="preserve">
+    <value>Carpeta de Exportados</value>
+  </data>
   <data name="Help" xml:space="preserve">
     <value>Ayuda</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Inicio</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Instalar</value>
   </data>
   <data name="Irial Items" xml:space="preserve">
     <value>Elementos de Irial</value>
@@ -144,11 +156,14 @@
   <data name="Local Gallery" xml:space="preserve">
     <value>Galeria Local</value>
   </data>
+  <data name="LocalRepository" xml:space="preserve">
+    <value>Repositorio Local</value>
+  </data>
   <data name="Models" xml:space="preserve">
     <value>Modelos</value>
   </data>
   <data name="Preview Image" xml:space="preserve">
-    <value>Imagen Previa</value>
+    <value>Vista Previa</value>
   </data>
   <data name="Projects" xml:space="preserve">
     <value>Projectos</value>
@@ -159,7 +174,13 @@
   <data name="Settings" xml:space="preserve">
     <value>Configuracion</value>
   </data>
+  <data name="System" xml:space="preserve">
+    <value>Sistema</value>
+  </data>
   <data name="Textures" xml:space="preserve">
     <value>Texturas</value>
+  </data>
+  <data name="Uninstall" xml:space="preserve">
+    <value>Desinstalar</value>
   </data>
 </root>

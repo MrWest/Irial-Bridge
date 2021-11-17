@@ -11,6 +11,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
 using IriaBridge.DataAccess;
+using System.Runtime.CompilerServices;
 
 namespace IriaBridge.ViewModel
 {
@@ -35,7 +36,7 @@ namespace IriaBridge.ViewModel
 
         public ViewModelBase()
         {
-            PropertyChanged += OnPropertyHasChanged;
+            //PropertyChanged += OnPropertyHasChanged;
         }
 
         /// <summary>
@@ -43,9 +44,9 @@ namespace IriaBridge.ViewModel
         /// </summary>
         /// <param name="sender">The object sending the event.</param>
         /// <param name="e">Arguments containing the details of the event.</param>
-        protected virtual void OnPropertyHasChanged(object sender, PropertyChangedEventArgs e)
-        {
-        }
+        //protected virtual void OnPropertyHasChanged(object sender, PropertyChangedEventArgs e)
+        //{
+        //}
 
         /// <summary>
         /// Creates a new presenter view model for the given item.
@@ -71,12 +72,7 @@ namespace IriaBridge.ViewModel
         /// <summary>
         /// Loads the items from the data source.
         /// </summary>
-        public virtual async 
-
-        /// <summary>
-        /// Loads the items from the data source.
-        /// </summary>
-        void Load()
+        public virtual async  void Load()
         {
 
             _isLoaded = false;
@@ -97,28 +93,32 @@ namespace IriaBridge.ViewModel
 
 
                 _isLoaded = true;
-                NotifyPropertyChanged("Items");
+                OnPropertyChanged("Items");
 
             }
-
-
-           
 
 
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void NotifyPropertyChanged(string propertyName)
+        // Create the OnPropertyChanged method to raise the event
+        // The calling member's name will be used as the parameter.
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        protected void Reload()
+        {
+            _lazyItems.Clear();
+            Load();
         }
 
         public void Notify()
         {
             _isLoaded = true;
-            NotifyPropertyChanged("Items");
+            OnPropertyChanged("Items");
         }
         public void LazyLoad()
         {

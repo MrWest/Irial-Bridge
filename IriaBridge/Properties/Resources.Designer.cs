@@ -79,6 +79,15 @@ namespace IriaBridge.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change.
+        /// </summary>
+        public static string Change {
+            get {
+                return ResourceManager.GetString("Change", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comments.
         /// </summary>
         public static string Comments {
@@ -97,6 +106,15 @@ namespace IriaBridge.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Export Directory.
+        /// </summary>
+        public static string ExportDirectory {
+            get {
+                return ResourceManager.GetString("ExportDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help.
         /// </summary>
         public static string Help {
@@ -111,6 +129,24 @@ namespace IriaBridge.Properties {
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import.
+        /// </summary>
+        public static string Import {
+            get {
+                return ResourceManager.GetString("Import", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Install.
+        /// </summary>
+        public static string Install {
+            get {
+                return ResourceManager.GetString("Install", resourceCulture);
             }
         }
         
@@ -138,6 +174,15 @@ namespace IriaBridge.Properties {
         public static string Local_Gallery {
             get {
                 return ResourceManager.GetString("Local Gallery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Local Repository.
+        /// </summary>
+        public static string LocalRepository {
+            get {
+                return ResourceManager.GetString("LocalRepository", resourceCulture);
             }
         }
         
@@ -187,11 +232,29 @@ namespace IriaBridge.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to System.
+        /// </summary>
+        public static string System {
+            get {
+                return ResourceManager.GetString("System", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Textures.
         /// </summary>
         public static string Textures {
             get {
                 return ResourceManager.GetString("Textures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uninstall.
+        /// </summary>
+        public static string Uninstall {
+            get {
+                return ResourceManager.GetString("Uninstall", resourceCulture);
             }
         }
     }
