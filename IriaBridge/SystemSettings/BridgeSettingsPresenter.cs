@@ -14,6 +14,7 @@ namespace IriaBridge.SystemSettings
             Object = ApplicationService.BridgeSettings;
         }
         
+       public void Load() { }
         public string LocalRepository { get { return Object.LocalRepository; } set { SetProperty(v => Object.LocalRepository = v, value); } }
         public string ExportDirectory { get { return Object.ExportDirectory; } set { SetProperty(v => Object.ExportDirectory = v, value); } }
         public string[] LumionVersions { get { return Object.LumionVersions; } set { SetProperty(v => Object.LumionVersions = v, value); } }

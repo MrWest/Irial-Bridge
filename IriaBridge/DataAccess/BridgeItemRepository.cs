@@ -67,9 +67,17 @@ namespace IriaBridge.DataAccess
             var dInfo = new DirectoryInfo(directory);
             var fileNames = dInfo.GetFiles().Select((f,next) => f.Name);
             
-            return fileNames.Count(name => name.EndsWith(".lib") || name.EndsWith(".lib.inn") || name.EndsWith(".lib.mtt")
-            || name.EndsWith(".lib.txx")) == 4 ? "Model" : "Unknown";
+           
+            if (fileNames.Count(name => name.EndsWith(".lib") || name.EndsWith(".lib.inn") || name.EndsWith(".lib.mtt")
+            || name.EndsWith(".lib.txx")) == 4)
+               return "Model";
+            if (fileNames.Count(name => name.EndsWith(".lnm")) == 1)
+               return "Material";
+            if (fileNames.Count(name => name.EndsWith(".ls")) == 1)
+                return "Project";
+            return "Unknown";
 
+          
         }
 
         public override BridgeItem UpdateEntity(BridgeItem item)

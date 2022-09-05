@@ -31,6 +31,7 @@ namespace FirstFloor.ModernUI.Windows.Controls
         /// Identifies the ContentLoader dependency property.
         /// </summary>
         public static readonly DependencyProperty ContentLoaderProperty = DependencyProperty.Register("ContentLoader", typeof(IContentLoader), typeof(ModernFrame), new PropertyMetadata(new DefaultContentLoader(), OnContentLoaderChanged));
+
         private static readonly DependencyPropertyKey IsLoadingContentPropertyKey = DependencyProperty.RegisterReadOnly("IsLoadingContent", typeof(bool), typeof(ModernFrame), new PropertyMetadata(false));
         /// <summary>
         /// Identifies the IsLoadingContent dependency property.
@@ -202,7 +203,7 @@ namespace FirstFloor.ModernUI.Windows.Controls
                     var localTokenSource = new CancellationTokenSource();
                     this.tokenSource = localTokenSource;
                     // load the content (asynchronous!)
-                    this.ContentLoader.OnCompleted =  () => SetValue(IsLoadingContentPropertyKey, false);
+                    this.ContentLoader.OnCompleted = () => SetValue(IsLoadingContentPropertyKey, false);
                     var scheduler = TaskScheduler.FromCurrentSynchronizationContext();
                     var task = this.ContentLoader.LoadContentAsync(newValue, this.tokenSource.Token);
 
@@ -233,7 +234,6 @@ namespace FirstFloor.ModernUI.Windows.Controls
                                     // keep the new content in memory
                                     this.contentCache[newValueNoFragment] = newContent;
                                 }
-
                                 SetContent(newValue, navigationType, newContent, false);
                             }
                         }

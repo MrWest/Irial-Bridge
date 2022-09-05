@@ -4,13 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:properties="clr-namespace:IriaBridge.Properties"
+             xmlns:presenter="clr-namespace:IriaBridge.SystemSettings"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <presenter:BridgeSettingsPresenter />
+    </UserControl.DataContext>
     <Grid Style="{StaticResource ContentRoot}">
-        <mui:ModernTab SelectedSource="/Views/SettingsAppearance.xaml" Layout="List">
+        <mui:ModernTab SelectedSource="/Views/LanguageSettings.xaml" Layout="List" ContentLoader="{StaticResource ContentLoader}">
             <mui:ModernTab.Links>
-                <mui:Link DisplayName="{Loc Apparence}" Source="/Views/SettingsAppearance.xaml" />
+                <!--<mui:Link DisplayName="{Loc Apparence}" Source="/Views/SettingsAppearance.xaml" />-->
                 <mui:Link DisplayName="{Loc Language}" Source="/Views/LanguageSettings.xaml" />
                 <mui:Link DisplayName="{Loc System}" Source="/Views/IrialBridgeSystem.xaml" />
             </mui:ModernTab.Links>

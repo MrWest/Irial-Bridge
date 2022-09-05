@@ -8,6 +8,6 @@ namespace IriaBridge.Domain
 {
     public class Category: Nameable
     {
-
+        public int id_section { get; set; }
     }
 }

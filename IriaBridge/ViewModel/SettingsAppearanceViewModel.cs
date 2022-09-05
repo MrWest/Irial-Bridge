@@ -72,7 +72,7 @@ namespace IriaBridge.Views
             this.themes.Add(new Link { DisplayName = "light", Source = AppearanceManager.LightThemeSource });
 
             // add additional themes
-            //this.themes.Add(new Link { DisplayName = "bing image", Source = new Uri("/ModernUIDemo;component/Assets/ModernUI.BingImage.xaml", UriKind.Relative) });
+            this.themes.Add(new Link { DisplayName = "bing image", Source = new Uri("/ModernUIDemo;component/Assets/ModernUI.BingImage.xaml", UriKind.Relative) });
             this.themes.Add(new Link { DisplayName = "hello kitty", Source = new Uri("/ModernUIDemo;component/Assets/ModernUI.HelloKitty.xaml", UriKind.Relative) });
             this.themes.Add(new Link { DisplayName = "love", Source = new Uri("/ModernUIDemo;component/Assets/ModernUI.Love.xaml", UriKind.Relative) });
             this.themes.Add(new Link { DisplayName = "snowflakes", Source = new Uri("/ModernUIDemo;component/Assets/ModernUI.Snowflakes.xaml", UriKind.Relative) });
@@ -139,7 +139,7 @@ namespace IriaBridge.Views
             get { return this.selectedTheme; }
             set
             {
-                if (!value.Source.OriginalString.Equals(AppearanceManager.Current.ThemeSource.OriginalString) && this.selectedTheme != value) {
+                if (value  != null  && !value.Source.OriginalString.Equals(AppearanceManager.Current.ThemeSource?.OriginalString) && this.selectedTheme != value) {
                     this.selectedTheme = value;
                     OnPropertyChanged("SelectedTheme");
 

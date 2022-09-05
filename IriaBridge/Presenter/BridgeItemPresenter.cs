@@ -41,7 +41,8 @@ namespace IriaBridge.Presenter
         {
             var settings = ServiceLocator.Current.GetInstance(typeof(BridgeSettingsPresenter)) as BridgeSettingsPresenter;
             return item != null && !string.IsNullOrEmpty(item.Name) && !string.IsNullOrEmpty(item.Description) 
-                && !string.IsNullOrEmpty(item.PreviewImage) && Directory.Exists(settings.ExportDirectory);
+                && !string.IsNullOrEmpty(item.PreviewImage) && Directory.Exists(settings.ExportDirectory) &&
+                 !File.Exists(settings.ExportDirectory + "\\" + item.Name + ".ibr");
         }
 
         public void Export()

@@ -10,5 +10,6 @@ namespace IriaBridge.Presenter
 {
     public class CategoryPresenter: NameablePresenter<Category, CategoryApplication>
     {
+        public int Section { get { return Object.id_section;  } }
     }
 }

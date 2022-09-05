@@ -8,7 +8,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <!--<TextBlock  Text="{x:Static properties:Resources.Language}" />-->
-        <ComboBox x:Name="LangCombo" SelectionChanged="LangCombo_SelectionChanged" HorizontalAlignment="Left" Height="28" Width="400" VerticalAlignment="Top" Margin="35">
+        <ComboBox x:Name="LangCombo" SelectionChanged="LangCombo_SelectionChanged" HorizontalAlignment="Left" Height="28" Width="400" VerticalAlignment="Top" Margin="16,6">
             <ComboBoxItem>En</ComboBoxItem>
             <ComboBoxItem>Es</ComboBoxItem>
         </ComboBox>

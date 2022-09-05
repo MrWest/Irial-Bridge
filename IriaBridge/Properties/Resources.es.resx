@@ -147,6 +147,9 @@
   <data name="Install" xml:space="preserve">
     <value>Instalar</value>
   </data>
+  <data name="Installed" xml:space="preserve">
+    <value>Instalado</value>
+  </data>
   <data name="Irial Items" xml:space="preserve">
     <value>Elementos de Irial</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="Models" xml:space="preserve">
     <value>Modelos</value>
+  </data>
+  <data name="NotInstalled" xml:space="preserve">
+    <value>No  Instalado</value>
   </data>
   <data name="Preview Image" xml:space="preserve">
     <value>Vista Previa</value>

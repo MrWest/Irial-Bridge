@@ -24,26 +24,24 @@ namespace IriaBridge.Views.Utils
         // This event handler is where the time-consuming work is done.
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
+            if (_viewModel  != null)
             _viewModel.LazyLoad();
         }
 
         private void BackgroundWorkerOnRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            _viewModel.Load();
-            if (OnCompleted != null)
+            if (_viewModel != null)
             {
-                OnCompleted.Invoke();
+                _viewModel.Load();
+                    
                 _viewModel.Notify();
-            }
+        }
+         if (OnCompleted != null)
+            OnCompleted.Invoke();
         }
 
          public Task<object> LoadContentAsync(Uri uri, System.Threading.CancellationToken cancellationToken)
         {
-           
-            //BackgroundWorker bw = new BackgroundWorker();
-            //bw.DoWork += backgroundWorker1_DoWork;
-            //bw.RunWorkerCompleted += BackgroundWorkerOnRunWorkerCompleted;
-            //bw.RunWorkerAsync();
 
             if (!Application.Current.Dispatcher.CheckAccess())
             {
@@ -69,16 +67,14 @@ namespace IriaBridge.Views.Utils
             {
                 return null;
             }
-            var view = Application.LoadComponent(uri) as UserControl;
+            var view = Application.LoadComponent(uri) as Control;
             var datacontext = view.DataContext as IViewModelBase;
-            if(datacontext != null)
-            {
                 _viewModel = datacontext;
                 BackgroundWorker bw = new BackgroundWorker();
                 bw.DoWork += backgroundWorker1_DoWork;
                 bw.RunWorkerCompleted += BackgroundWorkerOnRunWorkerCompleted;
                 bw.RunWorkerAsync();
-            }
+
             return view;
         }
 

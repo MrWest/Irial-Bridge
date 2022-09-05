@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace IriaBridge.Views
 {
     /// <summary>
-    /// Interaction logic for Settings.xaml
+    /// Interaction logic for ExportView.xaml
     /// </summary>
-    public partial class Settings : UserControl
+    public partial class ExportView : UserControl
     {
-        public Settings()
+        public ExportView()
         {
             InitializeComponent();
         }

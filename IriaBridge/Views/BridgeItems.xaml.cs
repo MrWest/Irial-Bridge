@@ -26,14 +26,6 @@ namespace IriaBridge.Views
         {
             
             InitializeComponent();
-            //listDockPanel.DataContext = new ModelViewModel();
-            //var viewmodel = listDockPanel.DataContext as ModelViewModel;
-            //viewmodel.Load();
-
-            //var leat = ServiceLocator.Current.GetInstance(typeof(CategoryViewModel)) as CategoryViewModel;
-            //leat.Load();
-
-            //cartContainer.DataContext = ServiceLocator.Current.GetInstance(typeof(CartViewModel));
         }
     }
 }

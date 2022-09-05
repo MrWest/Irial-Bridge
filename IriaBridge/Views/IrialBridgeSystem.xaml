@@ -4,14 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:properties="clr-namespace:IriaBridge.Properties"
-             xmlns:presenter="clr-namespace:IriaBridge.SystemSettings"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <UserControl.DataContext>
-        <presenter:BridgeSettingsPresenter />
-    </UserControl.DataContext>
     <Grid>
-        <StackPanel>
+        <StackPanel Margin="16,0,32,0">
             <TextBlock Text="{Loc LocalRepository}" />
             <Grid >
                 <Grid.ColumnDefinitions>

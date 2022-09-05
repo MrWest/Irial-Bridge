@@ -38,6 +38,21 @@ namespace IriaBridge
         /// </summary>
         public static readonly DependencyProperty ShowingItemProperty = DependencyProperty.Register("ShowingItem", typeof(INameablePresenter), typeof(MainWindow), new PropertyMetadata(null, OnSelectedItemChanged));
 
+        /// <summary>
+        /// Identifies the ContentLoader dependency property.
+        /// </summary>
+        public static readonly DependencyProperty NavigateProperty = DependencyProperty.Register("Navigate", typeof(ICommand), typeof(MainWindow), new PropertyMetadata(new RelayCommand<string>(ExecuteNavigate, CanExecuteNavigate)));
+
+        private static bool CanExecuteNavigate(string obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void ExecuteNavigate(string obj)
+        {
+            throw new NotImplementedException();
+        }
+
         private static void OnSelectedItemChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
             ((MainWindow)o).NavigeteOnNewItem((INameablePresenter)e.NewValue);
@@ -91,6 +106,15 @@ namespace IriaBridge
         {
             get { return (INameablePresenter)GetValue(ShowingItemProperty); }
             set { SetValue(ShowingItemProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the background content of this window instance.
+        /// </summary>
+        public ICommand Navigate
+        {
+            get { return (ICommand)GetValue(NavigateProperty); }
+            set { SetValue(NavigateProperty, value); }
         }
 
 

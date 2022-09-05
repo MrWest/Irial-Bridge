@@ -19,7 +19,7 @@ namespace IriaBridge.Business
 
             var settings = ServiceLocator.Current.GetInstance(typeof(BridgeSettingsPresenter)) as BridgeSettingsPresenter;
             string zipPath = settings.ExportDirectory;
-            string fileName = zipPath +item.Name + ".ibr";
+            string fileName = zipPath + "\\" +item.Name + ".ibr";
 
            ZipFile.CreateFromDirectory(item.Directory, fileName, CompressionLevel.Fastest, true);
            File.Encrypt(fileName);
@@ -37,6 +37,7 @@ namespace IriaBridge.Business
         public void ChangePreview(string newImagePath, BridgeItem item )
         {
             string previewPath = Path.Combine(item.DataDirectory, "preview.jpg");
+            if (!Directory.Exists(item.DataDirectory)) Directory.CreateDirectory(item.DataDirectory);
             File.Copy(newImagePath, previewPath, true);
         }
 

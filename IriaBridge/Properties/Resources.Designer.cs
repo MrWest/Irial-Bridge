@@ -151,6 +151,15 @@ namespace IriaBridge.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Installed.
+        /// </summary>
+        public static string Installed {
+            get {
+                return ResourceManager.GetString("Installed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Irial Items.
         /// </summary>
         public static string Irial_Items {
@@ -192,6 +201,15 @@ namespace IriaBridge.Properties {
         public static string Models {
             get {
                 return ResourceManager.GetString("Models", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not Installed.
+        /// </summary>
+        public static string NotInstalled {
+            get {
+                return ResourceManager.GetString("NotInstalled", resourceCulture);
             }
         }
         

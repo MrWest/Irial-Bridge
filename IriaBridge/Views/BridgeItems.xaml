@@ -7,6 +7,7 @@
              mc:Ignorable="d"
              xmlns:vw="clr-namespace:IriaBridge.ViewModel"
              xmlns:common="clr-namespace:IriaBridge.Views.Common"
+             xmlns:controls="clr-namespace:IriaBridge.Views.Controls"
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.DataContext>
         <vw:BridgeItemViewModel />
@@ -37,6 +38,6 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ListView>
-        <Button Grid.Column="2" Grid.Row="4" Content="{Loc Import}" Command="{Binding ImportCommand}" CommandParameter="{Binding }" />
+        <Button Grid.Column="2" Grid.Row="4" Content="{Loc Import}"  Command="{Binding ImportCommand}" />
     </Grid>
 </UserControl>

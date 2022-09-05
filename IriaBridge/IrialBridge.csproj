@@ -174,9 +174,13 @@
     <Compile Include="Views\Common\ItemCard.xaml.cs">
       <DependentUpon>ItemCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Controls\LinkButton.cs" />
     <Compile Include="Views\Converter\SmallImageConverter.cs" />
     <Compile Include="Views\Converter\MediumImageConverter.cs" />
     <Compile Include="Views\Converter\UriToCachedImageConverter.cs" />
+    <Compile Include="Views\ExportView.xaml.cs">
+      <DependentUpon>ExportView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Introduction.xaml.cs">
       <DependentUpon>Introduction.xaml</DependentUpon>
     </Compile>
@@ -245,6 +249,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Common\ItemCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

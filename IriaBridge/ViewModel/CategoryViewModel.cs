@@ -12,5 +12,11 @@ namespace IriaBridge.ViewModel
 {
     class CategoryViewModel: ViewModelBase<Category, CategoryPresenter, CategoryApplication, CategoryRepository>
     {
+        public int Section { get; set; }
+        public IEnumerable<CategoryPresenter> SectionCategory {
+            get{
+                return Items.Where(i => i.Section == Section);
+            }
+        }
     }
 }

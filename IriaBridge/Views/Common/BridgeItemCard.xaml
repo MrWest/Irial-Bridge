@@ -23,6 +23,16 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="InstallTextBlockStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="Text" Value="{Loc  Installed}" />
+            <Setter Property="Padding" Value="12,5" />
+            <Setter Property="Background" Value="{DynamicResource Accent}" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsInstalled}"  Value="False">
+                    <Setter Property="Text" Value="{Loc  NotInstalled}" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
     </UserControl.Resources>
     <Grid  x:Name="itemCard"  Cursor="Hand">
         <Grid.ColumnDefinitions>
@@ -63,13 +73,11 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="{Binding Path=Name}" Foreground="Blue"  FontSize="18" />
-                <TextBlock  Grid.Column="1" Background="{DynamicResource Accent}" Padding="12,5" >Installed</TextBlock>
+                <TextBlock  Grid.Column="1" Style="{StaticResource InstallTextBlockStyle}" />
             </Grid>
             <TextBlock Text="{Binding Path=Type}" FontWeight="Medium" Foreground="DimGray" />
             <TextBlock Text="{Binding Path=Description}" Foreground="DimGray" TextWrapping="Wrap" />
             <TextBlock Text="{Binding Path=Date}" Foreground="DimGray" />
-            <mui:BBCodeBlock  TextAlignment="Right" BBCode="[url=/Pages/LayoutWireframe.xaml]Exportar[/url]" />
-
         </StackPanel>
     </Grid>
 </UserControl>
